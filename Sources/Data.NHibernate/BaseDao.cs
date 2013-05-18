@@ -8,6 +8,9 @@ namespace Data.NHibernate
 {
 	public class BaseDao : NHibernateBase, IBaseDao
 	{
+		public BaseDao(string connectionString)
+			: base(connectionString) { }
+
 		protected IList<T> SelectAlias<T>(SimpleExpression expression, string associationPath, string alias)
 			where T : class, IEntityBase, new()
 		{

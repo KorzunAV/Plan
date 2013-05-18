@@ -17,3 +17,6 @@
 /Tests/Data.Test/Data.Test.csproj.user
 /Sources/Entities/Entities.csproj.user
 /Sources/Plan.5.0.ReSharper.user
+/Sources/Data.IoC/bin
+/Sources/Data.IoC/obj
+/Sources/Data

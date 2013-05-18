@@ -66,7 +66,7 @@
     <Compile Include="Entity\UserRole.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Entity\СashTransfer.cs">
+    <Compile Include="Entity\CashTransfer.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="IBaseDao.cs">
