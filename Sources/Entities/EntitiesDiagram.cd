@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Entities.Entity.CashAccount" Collapsed="true">
+    <Position X="1.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAIQAAAAAAAAAQACAgAAQAAA=</HashCode>
+      <FileName>Entity\CashAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities.Entity.СashTransfer" Collapsed="true">
+    <Position X="5.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhQAAAAEAIBEAAAAAAAAAAAAAQAAAEAAQAAAgAIAQAA=</HashCode>
+      <FileName>Entity\СashTransfer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities.Entity.CurrencyType" Collapsed="true">
+    <Position X="3.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entity\CurrencyType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities.Entity.ExchangeArchive" Collapsed="true">
+    <Position X="5.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAABAAAAAAAAAAAAAAAAAAAACAFAAAAAAAABAA=</HashCode>
+      <FileName>Entity\ExchangeArchive.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities.Entity.SystemUser" Collapsed="true">
+    <Position X="1.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgCAAASAAAAAAA=</HashCode>
+      <FileName>Entity\SystemUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities.Entity.Tag" Collapsed="true">
+    <Position X="3.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAACAAAAQAAA=</HashCode>
+      <FileName>Entity\Tag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities.Entity.TransferSubType" Collapsed="true">
+    <Position X="5.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Entity\TransferSubType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities.Entity.TransferType" Collapsed="true">
+    <Position X="1.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entity\TransferType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entities.Entity.UserRole" Collapsed="true">
+    <Position X="3.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entity\UserRole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
