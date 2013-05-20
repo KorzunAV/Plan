@@ -1,0 +1,12 @@
+﻿<div>
+	@(Html.Grid("CustomerGrid")
+	.SetCaption("Customers")
+	.AddColumn(new Column("CustomerId").SetLabel("Id"))
+	.AddColumn(new Column("Name"))
+	.AddColumn(new Column("Company"))
+	.SetUrl(Url.Action("List", "Customer"))
+	.SetAutoWidth(true)
+	.SetRowNum(10)
+	.SetViewRecords(true)
+	.SetPager("pager"))
+</div>
