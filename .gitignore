@@ -24,3 +24,6 @@
 /Sources/Common.Exeptions/obj
 /Sources/Services/bin
 /Sources/Services/obj
+/Sources/packages
+/Sources/Data.Test/bin
+/Sources/Data.Test/obj
