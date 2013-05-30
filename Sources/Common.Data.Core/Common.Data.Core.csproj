@@ -5,15 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2FE64D44-B81A-4702-A594-6BC0130F42FC}</ProjectGuid>
+    <ProjectGuid>{08A17397-4FFA-407D-8FE2-429A52DBE293}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Data.NHibernate</RootNamespace>
-    <AssemblyName>Data.NHibernate</AssemblyName>
+    <RootNamespace>Common.Data.Core</RootNamespace>
+    <AssemblyName>Common.Data.Core</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,54 +31,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FluentNHibernate">
-      <HintPath>..\packages\FluentNHibernate.1.3.0.733\lib\FluentNHibernate.dll</HintPath>
-    </Reference>
-    <Reference Include="Iesi.Collections">
-      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
-    </Reference>
-    <Reference Include="NHibernate">
-      <HintPath>..\packages\NHibernate.3.3.3.4000\lib\Net35\NHibernate.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseDao.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="CascadeConvention.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AutomappingConfiguration.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ConditionResolver.cs" />
-    <Compile Include="NHibernateBase.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="ClassNameHelper.cs" />
+    <Compile Include="Filter.cs" />
+    <Compile Include="IBaseDao.cs" />
+    <Compile Include="IConditionResolver.cs" />
+    <Compile Include="IEntityBase.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="PagedResult.cs" />
+    <Compile Include="Rule.cs" />
+    <Compile Include="SelectCondition.cs" />
+    <Compile Include="Paging.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Common.Data.Core\Common.Data.Core.csproj">
-      <Project>{08A17397-4FFA-407D-8FE2-429A52DBE293}</Project>
-      <Name>Common.Data.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Entities\Entities.csproj">
-      <Project>{ABE841B1-6873-4B47-AFC3-4B20600203F8}</Project>
-      <Name>Entities</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

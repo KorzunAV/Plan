@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Servic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Test", "Data.Test\Data.Test.csproj", "{AADD717E-40CF-4DEA-96EE-4BD41E6E0584}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Data.Core", "Common.Data.Core\Common.Data.Core.csproj", "{08A17397-4FFA-407D-8FE2-429A52DBE293}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{AADD717E-40CF-4DEA-96EE-4BD41E6E0584}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AADD717E-40CF-4DEA-96EE-4BD41E6E0584}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AADD717E-40CF-4DEA-96EE-4BD41E6E0584}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08A17397-4FFA-407D-8FE2-429A52DBE293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08A17397-4FFA-407D-8FE2-429A52DBE293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08A17397-4FFA-407D-8FE2-429A52DBE293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08A17397-4FFA-407D-8FE2-429A52DBE293}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,5 +73,6 @@ Global
 		{EAF4FE3A-5460-48BE-BC60-E5202841CA09} = {A8E580C8-75FF-40B2-878E-333E3018A9BB}
 		{AADD717E-40CF-4DEA-96EE-4BD41E6E0584} = {ADEA59B6-4FF7-4DA3-8099-CA8872FED610}
 		{65019612-E075-411E-BE19-515D9DB882DC} = {078055C0-AAC5-44A4-8010-850BEDFB0DD9}
+		{08A17397-4FFA-407D-8FE2-429A52DBE293} = {078055C0-AAC5-44A4-8010-850BEDFB0DD9}
 	EndGlobalSection
 EndGlobal

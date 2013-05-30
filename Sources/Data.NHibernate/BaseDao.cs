@@ -1,84 +1,71 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
+using Common.Data.Core;
 using Entities;
-using Entities.Entity;
+using NHibernate;
 using NHibernate.Criterion;
 
 namespace Data.NHibernate
 {
-	public class BaseDao : NHibernateBase, IBaseDao
-	{
-		public BaseDao(string connectionString)
-			: base(connectionString) { }
+    public class BaseDao : NHibernateBase, IBaseDao
+    {
+        private readonly IConditionResolver _conditionResolver;
 
-		protected IList<T> SelectAlias<T>(SimpleExpression expression, string associationPath, string alias)
-			where T : class, IEntityBase, new()
-		{
-			return TryExecute(() => Session.CreateCriteria<T>()
-				  .CreateAlias(associationPath, alias)
-				  .Add(expression)
-				  .List<T>());
-		}
+        public BaseDao(string connectionString, IConditionResolver conditionResolver)
+            : base(connectionString)
+        {
+            _conditionResolver = conditionResolver;
+        }
 
-		public virtual IList<T> SelectAll<T>()
-			where T : IEntityBase
-		{
+        protected IList<T> SelectAlias<T>(SimpleExpression expression, string associationPath, string alias)
+            where T : class, IEntityBase, new()
+        {
+            return TryExecute(() => Session.CreateCriteria<T>()
+                  .CreateAlias(associationPath, alias)
+                  .Add(expression)
+                  .List<T>());
+        }
 
-			return TryExecute(() => Session.CreateCriteria(typeof(T))
-							 .List<T>());
-		}
+        public PagedResult<T> SelectRange<T>(SelectCondition condition)
+            where T : IEntityBase
+        {
+            return TryExecute(() => _conditionResolver.AddCondition<ICriteria, T>(Session.CreateCriteria(typeof(T)), condition));
+        }
 
-		public virtual Page<T> SelectRange<T>(int itemPerPage, int currentPage)
-			where T : class, IEntityBase, new()
-		{
-			return TryExecute(() =>
-								  {
-									  var page = new Page<T>(itemPerPage, currentPage);
+        public virtual T Select<T>(int id)
+            where T : class, IEntityBase
+        {
+            return TryExecute(() => (T)Session.CreateCriteria(typeof(T))
+                                       .Add(Restrictions.Eq(EntityBase.GetFieldName<T>(e => e.Id), id))
+                                       .UniqueResult());
+        }
 
-									  //TODO: CR: KOA-FIX: Usage of 'as' is incorrect
-									  var t = Session.CreateCriteria(typeof(T))
-										  .List<T>();
-									  page.MaxIndex = t.Count() - 1;
-									  page.Items = t.Skip(page.StartIndex - 1).Take(itemPerPage);
-									  return page;
-								  });
-		}
+        public virtual T SaveOrUpdate<T>(T obj)
+            where T : IEntityBase
+        {
+            return TryExecute(() =>
+                                  {
+                                      Session.SaveOrUpdate(obj);
+                                      Session.Flush();
+                                      return obj;
+                                  });
+        }
 
-		public virtual T Select<T>(int id)
-			where T : class, IEntityBase
-		{
-			return TryExecute(() => (T)Session.CreateCriteria(typeof(T))
-									   .Add(Restrictions.Eq(EntityBase.GetFieldName<T>(e => e.Id), id))
-									   .UniqueResult());
-		}
+        public virtual bool Delete<T>(int id)
+            where T : class, IEntityBase
+        {
+            return TryExecute(() =>
+            {
+                var project = (T)Session.CreateCriteria(typeof(T))
+                                       .Add(Restrictions.Eq(EntityBase.GetFieldName<T>(e => e.Id), id))
+                                       .UniqueResult();
 
-		public virtual T SaveOrUpdate<T>(T obj)
-			where T : IEntityBase
-		{
-			return TryExecute(() =>
-								  {
-									  Session.SaveOrUpdate(obj);
-									  Session.Flush();
-									  return obj;
-								  });
-		}
-
-		public virtual bool Delete<T>(int id)
-			where T : class, IEntityBase
-		{
-			return TryExecute(() =>
-			{
-				var project = (T)Session.CreateCriteria(typeof(T))
-									   .Add(Restrictions.Eq(EntityBase.GetFieldName<T>(e => e.Id), id))
-									   .UniqueResult();
-
-				if (project != null)
-				{
-					Session.Delete(project);
-					Session.Flush();
-				}
-				return true;
-			});
-		}
-	}
+                if (project != null)
+                {
+                    Session.Delete(project);
+                    Session.Flush();
+                }
+                return true;
+            });
+        }
+    }
 }

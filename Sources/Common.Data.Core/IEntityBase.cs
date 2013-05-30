@@ -1,4 +1,4 @@
-﻿namespace Entities.Entity
+﻿namespace Common.Data.Core
 {
 	public interface IEntityBase
 	{

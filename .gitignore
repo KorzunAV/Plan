@@ -27,3 +27,7 @@
 /Sources/packages
 /Sources/Data.Test/bin
 /Sources/Data.Test/obj
+/Sources/Common.Data.Core/bin
+/Sources/Common.Data.Core/obj
+/Sources/*.user
+/Sources/*.user

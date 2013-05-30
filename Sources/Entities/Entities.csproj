@@ -35,50 +35,45 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassNameHelper.cs">
+    <Compile Include="CashAccount.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Entity\CashAccount.cs">
+    <Compile Include="CurrencyType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Entity\CurrencyType.cs">
+    <Compile Include="EntityBase.cs" />
+    <Compile Include="ExchangeArchive.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Entity\EntityBase.cs" />
-    <Compile Include="Entity\ExchangeArchive.cs">
+    <Compile Include="SystemUser.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Entity\IEntityBase.cs">
+    <Compile Include="Tag.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Entity\SystemUser.cs">
+    <Compile Include="TransferSubType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Entity\Tag.cs">
+    <Compile Include="TransferType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Entity\TransferSubType.cs">
+    <Compile Include="UserRole.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Entity\TransferType.cs">
+    <Compile Include="CashTransfer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Entity\UserRole.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Entity\CashTransfer.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="IBaseDao.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Paging.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="EntitiesDiagram.cd" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Data.Core\Common.Data.Core.csproj">
+      <Project>{08A17397-4FFA-407D-8FE2-429A52DBE293}</Project>
+      <Name>Common.Data.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

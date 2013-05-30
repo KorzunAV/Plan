@@ -1,4 +1,5 @@
-﻿<header>
+﻿@using Client.Web.Controllers
+<header>
     <div class="content-wrapper">
         <div class="float-left">
             <p class="site-title">
@@ -47,6 +48,10 @@
                 You can easily find a web hosting company that offers the right mix of features
                 and price for your applications.
                 <a href="http://go.microsoft.com/fwlink/?LinkId=245164">Learn more…</a>
+            </li>
+            <li class="three">
+                <h5>Потестить грид</h5>
+                @Html.ActionLink("ссылка на тестовый грид.", TestGridController.IndexAction, TestGridController.Name)
             </li>
         </ol>
     </section>

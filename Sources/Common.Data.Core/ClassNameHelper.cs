@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Entities.Entity;
 
-namespace Entities
+namespace Common.Data.Core
 {
 	//http://stackoverflow.com/questions/671968/retrieving-property-name-from-lambda-expression
 	public static class ClassNameHelper

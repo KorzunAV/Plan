@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Common.Exeptions;
+using Data.IoC;
+using Ninject;
 using NLog;
 
 namespace Client.Web.Controllers
@@ -32,7 +34,14 @@ namespace Client.Web.Controllers
 
 	public class BaseController : Controller
 	{
-		private static Logger Log = LogManager.GetCurrentClassLogger();
+        protected static StandardKernel Kernel;
+        public BaseController()
+        {
+            Kernel = new StandardKernel(new DataModule());
+        }
+
+
+	    private static Logger Log = LogManager.GetCurrentClassLogger();
 
 		protected const string ModelStateKey = "7H5L1C3O-1L3I-2G45-I1TG-1K2Y6V71P5Y3";
 		protected const string PreviousRouteDataKey = "35HUL25H-1L3I-G3L5-FG00-I33K20H32R66";

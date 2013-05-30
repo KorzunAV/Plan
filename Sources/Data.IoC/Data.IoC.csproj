@@ -54,6 +54,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common.Data.Core\Common.Data.Core.csproj">
+      <Project>{08A17397-4FFA-407D-8FE2-429A52DBE293}</Project>
+      <Name>Common.Data.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Data.NHibernate\Data.NHibernate.csproj">
       <Project>{2FE64D44-B81A-4702-A594-6BC0130F42FC}</Project>
       <Name>Data.NHibernate</Name>

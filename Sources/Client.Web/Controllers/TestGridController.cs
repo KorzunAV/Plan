@@ -1,66 +1,36 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
-//using Entities.Entity;
+using Common.Data.Core;
 using MvcJqGrid;
+using Entities;
+using Ninject;
 
 namespace Client.Web.Controllers
 {
-	//public class TestGridController : BaseController<TestGridController>
-	//{
-	//    protected IBaseDao Dao { get; set; }
+    public class TestGridController : BaseController<TestGridController>
+    {
+        public const string ListAction = "List";
 
-	//    public TestGridController(IBaseDao dao)
-	//    {
-	//        Dao = dao;
-	//    }
+        protected IBaseDao Dao { get { return Kernel.Get<IBaseDao>(); } }
 
-	//    //
-	//    // GET: /TestGrid/
+        public ActionResult Index()
+        {
+            return RedirectToAction(ListAction, new GridSettings());
+        }
 
-	//    public ActionResult Index()
-	//    {
-	//        return View();
-	//    }
+        public ActionResult List(GridSettings gridSettings)
+        {
+            var items = Dao.SelectRange<UserRole>(new SelectCondition());
 
-	//    public ActionResult List(GridSettings gridSettings)
-	//    {
-	//        CustomerRepository repository = new CustomerRepository();
-	//        string name = string.Empty;
-	//        string company = string.Empty;
+            var jsonData = new
+            {
+                total = items.ItemsCount / gridSettings.PageSize + 1,
+                page = gridSettings.PageIndex,
+                records = items.Result.Count,
+                rows = items.Result.ToArray()
+            };
 
-	//        if (gridSettings.IsSearch)
-	//        {
-	//            name = gridSettings.Where.rules.Any(r => r.field == "Name") ?
-	//                   gridSettings.Where.rules.FirstOrDefault(r => r.field == "Name").data :
-	//                   string.Empty;
-	//            company = gridSettings.Where.rules.Any(r => r.field == "Company") ?
-	//                gridSettings.Where.rules.FirstOrDefault(r => r.field == "Company").data :
-	//                string.Empty;
-	//        }
-
-	//        var customers = repository.List(name, company, gridSettings.SortColumn, gridSettings.SortOrder);
-	//        int totalCustomers = customers.Count;
-	//        var jsonData = new
-	//        {
-	//            total = totalCustomers / gridSettings.PageSize + 1,
-	//            page = gridSettings.PageIndex,
-	//            records = totalCustomers,
-	//            rows = (
-	//                    from c in customers
-	//                    select new
-	//                    {
-	//                        id = c.CustomerID,
-	//                        cell = new[]
-	//                {
-	//                    c.CustomerID.ToString(),
-	//                    string.Format("{0} {1}", c.FirstName, c.LastName),
-	//                    c.CompanyName,
-	//                    c.EmailAddress
-	//                }
-	//                    }).ToArray()
-	//        };
-
-	//        return Json(jsonData, JsonRequestBehavior.AllowGet);
-	//    }
-	//}
+            return Json(jsonData, JsonRequestBehavior.AllowGet);
+        }
+    }
 }

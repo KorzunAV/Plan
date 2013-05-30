@@ -1,6 +1,6 @@
-﻿using Data.IoC;
+﻿using Common.Data.Core;
+using Data.IoC;
 using Data.NHibernate;
-using Entities.Entity;
 using Ninject;
 using NUnit.Framework;
 

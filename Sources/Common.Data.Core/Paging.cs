@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Entities
+namespace Common.Data.Core
 {
 	public class Page<T> where T : class
 	{

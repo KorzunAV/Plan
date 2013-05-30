@@ -15,7 +15,7 @@
     <AssemblyName>Client.Web</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
@@ -40,6 +40,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MvcJqGrid">
       <HintPath>..\packages\MvcJqGrid.1.0.11\lib\net40\MvcJqGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="NLog">
       <HintPath>..\packages\NLog.2.0.1.2\lib\net40\NLog.dll</HintPath>
@@ -252,9 +255,21 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common.Data.Core\Common.Data.Core.csproj">
+      <Project>{08A17397-4FFA-407D-8FE2-429A52DBE293}</Project>
+      <Name>Common.Data.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common.Exeptions\Common.Exeptions.csproj">
       <Project>{65019612-E075-411E-BE19-515D9DB882DC}</Project>
       <Name>Common.Exeptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data.IoC\Data.IoC.csproj">
+      <Project>{3FCF3E43-6053-4FE6-989F-A32CDADC8986}</Project>
+      <Name>Data.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{ABE841B1-6873-4B47-AFC3-4B20600203F8}</Project>
+      <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -262,6 +277,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Errors.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TestGrid\List.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -281,12 +299,10 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>47641</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://localhost:47641/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
+          <CustomServerUrl>http://localhost/Plan</CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

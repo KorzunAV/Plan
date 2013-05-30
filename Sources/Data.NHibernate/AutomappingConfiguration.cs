@@ -1,5 +1,5 @@
 ﻿using System;
-using Entities.Entity;
+using Entities;
 using FluentNHibernate.Automapping;
 
 namespace Data.NHibernate
