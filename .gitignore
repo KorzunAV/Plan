@@ -31,3 +31,7 @@
 /Sources/Common.Data.Core/obj
 /Sources/*.user
 /Sources/*.user
+/Sources/MvcJqGrid.Example/bin
+/Sources/MvcJqGrid.Example/obj
+/Sources/*.suo
+/Sources/MvcJqGrid.Example/*.user

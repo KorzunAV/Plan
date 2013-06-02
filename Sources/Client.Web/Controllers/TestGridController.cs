@@ -15,7 +15,7 @@ namespace Client.Web.Controllers
 
         public ActionResult Index()
         {
-            return RedirectToAction(ListAction, new GridSettings());
+            return View();
         }
 
         public ActionResult List(GridSettings gridSettings)

@@ -1,0 +1,17 @@
+﻿@using Client.Web.Controllers
+@using MvcJqGrid
+
+
+<div>
+	@(Html.Grid("Basic")
+    .SetCaption("UserRole")
+    .AddColumn(new Column("Id").SetLabel("Id"))
+    .AddColumn(new Column("Name"))
+    .AddColumn(new Column("Version"))
+    .SetUrl(Url.Action(TestGridController.ListAction, TestGridController.Name))
+    .SetAutoWidth(true)
+    .SetRowNum(10)
+    .SetRowList(new[]{10,15,20,50})
+    .SetViewRecords(true)
+    .SetPager("pager"))
+</div>
