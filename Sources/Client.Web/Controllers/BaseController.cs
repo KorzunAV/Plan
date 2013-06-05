@@ -34,22 +34,16 @@ namespace Client.Web.Controllers
 
 	public class BaseController : Controller
 	{
+        protected const string ModelStateKey = "7H5L1C3O-1L3I-2G45-I1TG-1K2Y6V71P5Y3";
+        protected const string PreviousRouteDataKey = "35HUL25H-1L3I-G3L5-FG00-I33K20H32R66";
+        protected const string CurrentRouteDataKey = "HT11F5FH-YU1K-G3L5-FG00-I33K20H32R5F";
+        public const string IndexAction = "Index";
+        public const string CurrentPage = "curPage";
+        public const string ItemPerPage = "itemPerPage";
+
         protected static StandardKernel Kernel;
-        public BaseController()
-        {
-            Kernel = new StandardKernel(new DataModule());
-        }
-
-
-	    private static readonly Logger Log = LogManager.GetCurrentClassLogger();
-
-		protected const string ModelStateKey = "7H5L1C3O-1L3I-2G45-I1TG-1K2Y6V71P5Y3";
-		protected const string PreviousRouteDataKey = "35HUL25H-1L3I-G3L5-FG00-I33K20H32R66";
-		protected const string CurrentRouteDataKey = "HT11F5FH-YU1K-G3L5-FG00-I33K20H32R5F";
-
-		public const string IndexAction = "Index";
-		public const string CurrentPage = "curPage";
-		public const string ItemPerPage = "itemPerPage";
+        private static readonly Logger Log = LogManager.GetCurrentClassLogger();
+      
 
 		public RouteValueDictionary PreviousRouteData
 		{
@@ -62,6 +56,14 @@ namespace Client.Web.Controllers
 			get { return (RouteValueDictionary)Session[CurrentRouteDataKey]; }
 			set { Session[CurrentRouteDataKey] = value; }
 		}
+
+
+
+        public BaseController()
+        {
+            Kernel = new StandardKernel(new DataModule());
+        }
+
 
 		#region [support]
 		public static string GetControllerName(Type controllerType, bool removeControllerPostfix)

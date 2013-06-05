@@ -35,3 +35,6 @@
 /Sources/MvcJqGrid.Example/obj
 /Sources/*.suo
 /Sources/MvcJqGrid.Example/*.user
+/Sources/Client.Web.Test/bin
+/Sources/Common.Security/obj
+/Sources/Common.Security/bin

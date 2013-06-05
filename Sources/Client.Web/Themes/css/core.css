@@ -1,0 +1,19 @@
+﻿/* ClearFix
+---------------------------------------------------------------------------------------------------------------------------------*/
+.clearFix			{ clear: both; width: 100%; }
+.clearFixBorder		{ clear: both; width: 100%; }
+.clearFix.Alt		{ }
+/* Footer
+---------------------------------------------------------------------------------------------------------------------------------*/
+#footerContainer		{ clear: both; overflow: hidden; display: block;  }
+.footer					{ clear: both; margin:auto; position: relative; overflow: hidden;}
+#vwLogo					{ position: absolute; }
+.footer ul				{ }
+.footer ul li			{ font-family: Arial, Helvetica, sans-serif; }
+.footer ul li a			{ }
+.footer ul li a:hover	{ }
+.footer ul li img		{ vertical-align: middle; }
+.footer ul li h3		{ }
+.footer	p				{ }
+.listContainers			{ float: left; }
+h3.footerTitles			{ font-family: Arial, Helvetica, sans-serif; }

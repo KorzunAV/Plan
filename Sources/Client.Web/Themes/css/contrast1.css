@@ -1,0 +1,19 @@
+﻿/* ClearFix
+---------------------------------------------------------------------------------------------------------------------------------*/
+.clearFix			{ }
+.clearFixBorder		{ border-top: 1px solid #d4d4d4; border-bottom: 1px solid #f5f5f5; background: #eeeeee; }
+.clearFix.Alt		{ }
+/* Footer
+---------------------------------------------------------------------------------------------------------------------------------*/
+#footerContainer		{ }
+.footer					{ }
+#vwLogo					{ }
+.footer ul				{ }
+.footer ul li			{ }
+.footer ul li a			{ color: #333; }
+.footer ul li a:hover	{ color: #069; }
+.footer ul li img		{ }
+.footer ul li h3		{ }
+.footer	p				{ color: #666; }
+.listContainers			{ }
+h3.footerTitles			{ }

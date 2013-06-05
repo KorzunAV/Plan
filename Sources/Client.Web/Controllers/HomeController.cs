@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Client.Web.Controllers
 {
-	public class HomeController : Controller
+	public class HomeController : BaseController<HomeController>
 	{
 		public ActionResult Index()
 		{
