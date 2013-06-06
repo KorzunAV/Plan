@@ -3,15 +3,19 @@ using System.Web.Mvc;
 using Common.Data.Core;
 using MvcJqGrid;
 using Entities;
-using Ninject;
 
 namespace Client.Web.Controllers
 {
     public class TestGridController : BaseController<TestGridController>
     {
         public const string ListAction = "List";
+        private IBaseDao Dao { get; set; }
 
-        protected IBaseDao Dao { get { return Kernel.Get<IBaseDao>(); } }
+        public TestGridController(IBaseDao dao)
+        {
+            Dao = dao;
+        }
+
 
         public ActionResult Index()
         {

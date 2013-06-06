@@ -1,8 +1,10 @@
-﻿namespace Common.Data.Core
+﻿using System;
+
+namespace Common.Data.Core
 {
 	public interface IEntityBase
 	{
-		int Id { get; set; }
+        Guid Id { get; set; }
 		int Version { get; set; }
 	}
 }

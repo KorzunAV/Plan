@@ -11,24 +11,23 @@ namespace Client.Web.Test
 
         protected virtual void LogAsStubSimpl()
         {
-            UserPrincipal.CurrentUser = StubData.Instance.CreateSimplPrincipal();
+            UserPrincipal.CurrentUser = StubData.CreateSimplPrincipal();
         }
 
-        protected virtual void LogAsStubVIP()
+        protected virtual void LogAsStubVip()
         {
-            UserPrincipal.CurrentUser = StubData.Instance.CreateVIPPrincipal();
+            UserPrincipal.CurrentUser = StubData.CreateVipPrincipal();
         }
 
         protected virtual void LogAsStubAdmin()
         {
-            UserPrincipal.CurrentUser = StubData.Instance.CreateAdminPrincipal();
+            UserPrincipal.CurrentUser = StubData.CreateAdminPrincipal();
         }
 
         protected virtual void LogAsStubSu()
         {
-            UserPrincipal.CurrentUser = StubData.Instance.CreateSuPrincipal();
+            UserPrincipal.CurrentUser = StubData.CreateSuPrincipal();
         }
-
 
         public virtual void Logout()
         {

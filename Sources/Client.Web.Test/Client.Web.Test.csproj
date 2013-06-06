@@ -33,6 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Web.Mvc">
+      <HintPath>..\packages\Mvc2Futures.2.0.50217.0\lib\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcContrib">
+      <HintPath>..\packages\MvcContrib.2.0.95.0\lib\MvcContrib.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcContrib.TestHelper">
+      <HintPath>..\packages\MvcContrib.TestHelper.2.0.95.0\lib\net\MvcContrib.TestHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
     </Reference>
@@ -48,6 +60,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -58,8 +71,12 @@
   <ItemGroup>
     <Compile Include="Attributes\ActionFilters\AllowAnonymousAttributeTest.cs" />
     <Compile Include="Attributes\ActionFilters\SecurityAttributeTest.cs" />
+    <Compile Include="Controllers\ControllerTestFixture.cs" />
     <Compile Include="Controllers\Controls\Footer\FooterControlControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RhinoMocksFactory.cs" />
+    <Compile Include="RhinoMocksProxy.cs" />
+    <Compile Include="StubData.cs" />
     <Compile Include="TestFixtureBase.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,9 +88,21 @@
       <Project>{EAF4FE3A-5460-48BE-BC60-E5202841CA09}</Project>
       <Name>Client.Web</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common.Data.Core\Common.Data.Core.csproj">
+      <Project>{08A17397-4FFA-407D-8FE2-429A52DBE293}</Project>
+      <Name>Common.Data.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common.Security\Common.Security.csproj">
       <Project>{F26D487A-1E98-4BA5-8C6C-47390094E79E}</Project>
       <Name>Common.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data.IoC\Data.IoC.csproj">
+      <Project>{3FCF3E43-6053-4FE6-989F-A32CDADC8986}</Project>
+      <Name>Data.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{ABE841B1-6873-4B47-AFC3-4B20600203F8}</Project>
+      <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

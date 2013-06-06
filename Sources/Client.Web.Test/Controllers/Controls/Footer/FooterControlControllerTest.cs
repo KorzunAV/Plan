@@ -1,49 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using Client.Web.Controllers.Controls.Footer;
+using Client.Web.Models.Controls.Footer;
 using NUnit.Framework;
 
 namespace Client.Web.Test.Controllers.Controls.Footer
 {
-     [TestFixture]
+    [TestFixture]
     public class FooterControlControllerTest : ControllerTestFixture<FooterControlController>
     {
         [Test]
+        public void IndexActionAttributeTest()
+        {
+            var attr = Controller.GetType()
+                .GetMethod(FooterControlController.IndexAction)
+                .GetCustomAttributes(typeof(ChildActionOnlyAttribute), false);
+            Assert.IsNotEmpty(attr, "Index action should be marked with ChildActionOnlyAttribute, because it is not a public action, which could be called via user browser");
+        }
+
+
+        [Test]
         public void IndexUnknownUserTest()
         {
+            LogAsEmpty();
             // HAL: The test should be changed when appropriate functionality will be added for tenders footer items
             PartialViewResult result = Controller.Index();
             Assert.IsTrue(result.ViewName == FooterControlController.FooterControlPath);
-            FooterModel model = (FooterModel)result.Model;
-            Assert.IsTrue(model.IsProcurementEnabled);
-            Assert.IsTrue(model.IsMyCataloguesEnabled);
-            //SAK: "Online Store" module hidden until not ready
-            Assert.IsFalse(model.IsMyStoresEnabled);
-            // Test the part which specified for CMP only
-            Assert.IsFalse(model.IsTendersEnabled);
-            Assert.IsFalse(model.IsPQQsEnabled);
-            Assert.IsFalse(model.IsMyTendersEnabled);
-            Assert.IsFalse(model.IsTendersAdministrationEnabled);
+            var model = (FooterModel) result.Model;
+            Assert.False(model.IsMyAccountEnabled);
         }
 
         [Test]
-        public void IndexSUTest()
+        public void IndexSuTest()
         {
-            // HAL: The test should be changed when appropriate functionality will be added for tenders footer items
             LogAsStubSu();
 
             PartialViewResult result = Controller.Index();
             Assert.IsTrue(result.ViewName == FooterControlController.FooterControlPath);
-            FooterModel model = (FooterModel)result.Model;
-            Assert.IsFalse(model.IsProcurementEnabled);
-            Assert.IsFalse(model.IsMyCataloguesEnabled);
-            Assert.IsFalse(model.IsMyStoresEnabled);
-            // Test the part which specified for CMP only
-            Assert.IsFalse(model.IsTendersEnabled);
-            Assert.IsFalse(model.IsPQQsEnabled);
-            Assert.IsFalse(model.IsMyTendersEnabled);
-            Assert.IsFalse(model.IsTendersAdministrationEnabled);
+            var model = (FooterModel) result.Model;
+            Assert.True(model.IsMyAccountEnabled);
         }
+    }
 }

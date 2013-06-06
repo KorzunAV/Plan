@@ -4,35 +4,40 @@ using Common.Data.Core;
 
 namespace Entities
 {
-	/// <summary>
-	/// Базовый класс для сущьностей
-	/// </summary>
-	public class EntityBase : IEntityBase
-	{
+    /// <summary>
+    /// Базовый класс для сущьностей
+    /// </summary>
+    public class EntityBase : IEntityBase
+    {
+        #region IEntityBase Members
 
-		#region IEntityBase Members
+        private Guid _id = Guid.Empty;
 
-		/// <summary>
-		/// Уникальный идентификатор
-		/// </summary>
-		public virtual int Id { get; set; }
+        /// <summary>
+        /// Уникальный идентификатор
+        /// </summary>
+        public virtual Guid Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
 
-		/// <summary>
-		/// Версия
-		/// </summary>
-		public virtual int Version { get; set; }
+        /// <summary>
+        /// Версия
+        /// </summary>
+        public virtual int Version { get; set; }
 
-		#endregion
+        #endregion
 
-		/// <summary>
-		/// Получаем имя свойства.
-		/// </summary>
-		/// <param name="action">Лямда оператор.</param>
-		/// <returns>Имя свойства.</returns>
-		public static string GetFieldName<T>(Expression<Func<T, object>> action)
-			where T : class, IEntityBase
-		{
-			return ClassNameHelper.GetFieldName(action);
-		}
-	}
+        /// <summary>
+        /// Получаем имя свойства.
+        /// </summary>
+        /// <param name="action">Лямда оператор.</param>
+        /// <returns>Имя свойства.</returns>
+        public static string GetFieldName<T>(Expression<Func<T, object>> action)
+            where T : class, IEntityBase
+        {
+            return ClassNameHelper.GetFieldName(action);
+        }
+    }
 }

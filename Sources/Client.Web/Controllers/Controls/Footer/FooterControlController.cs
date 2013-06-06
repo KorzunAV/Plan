@@ -8,14 +8,13 @@ namespace Client.Web.Controllers.Controls.Footer
     {
         public const string FooterControlPath = "Controls/FooterControl";
 
-        public ActionResult Index()
+        [ChildActionOnly]
+        public PartialViewResult Index()
         {
             FooterModel model = CreateModel();
 
             UpdateEnabledModules(model);
             return PartialView(FooterControlPath, model);
-
-            return View();
         }
 
         protected virtual FooterModel CreateModel()
@@ -26,6 +25,8 @@ namespace Client.Web.Controllers.Controls.Footer
         protected virtual void UpdateEnabledModules(FooterModel model)
         {
             model.HomeUrl = Url.Action(IndexAction, HomeController.Name);
+
+            model.IsMyAccountEnabled = ModulesSecurity.IsModuleVisible(ModuleOptionPermissions.MODULE_ID_MY_ACCOUNT_GUID);
         }
     }
 }

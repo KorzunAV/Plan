@@ -1,37 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Principal;
+using Entities;
 
 namespace Common.Security
 {
     [Serializable]
     public class UserPrincipal : GenericPrincipal, ICloneable
     {
-        public Guid Id { get; protected set; }
+        private static readonly UserPrincipal _empty = new UserPrincipal();
+
+        public SystemUser SystemUser { get; protected set; }
 
         public Guid SessionId { get; set; }
 
-        public string Name
-        {
-            get { return Identity.Name; }
-        }
-
-        public List<Guid> RoleTypes { get; protected set; }
-
-        /// <summary>
-        /// Permissions of the user
-        /// </summary>
-        public List<Guid> Permissions { get; protected set; }
-
-        /// <summary>
-        /// Flag, showing whether user has accepted Marketplace's terms of use
-        /// </summary>
-        public bool TermsOfUseAccepted { get; set; }
-
-
-
-        private static readonly UserPrincipal _empty = new UserPrincipal();
         /// <summary>
         /// Empty use principal. Uses for non-authorized users
         /// </summary>
@@ -72,55 +53,32 @@ namespace Common.Security
         /// Private constructor of class. Uses for creating of Empty instance of the object
         /// </summary>
         private UserPrincipal()
-            : this(Guid.Empty, String.Empty, Guid.Empty, new List<Guid>(), new List<Guid>(), false)
-        {
-        }
-
-
-        /// <summary>
-        /// Constructor of class
-        /// </summary>
-        /// <param name="id">Id of user</param>
-        /// <param name="name">User name</param>
-        /// <param name="sessionId">Identigier of session</param>
-        /// <param name="permissions">User permisions</param>
-        /// <param name="roles">User roles</param>
-        /// <param name="mpTermsOfUseAccepted">Flag, showing whether user has accepted Marketplace's terms of use</param>
-        public UserPrincipal(Guid id, string name, Guid sessionId, List<Guid> permissions, List<Guid> roles, bool mpTermsOfUseAccepted)
-            : this(new GenericIdentity(name), id, sessionId, permissions, roles, mpTermsOfUseAccepted)
+            : this(new SystemUser { UserRole = new UserRole() }, Guid.Empty)
         {
         }
 
         /// <summary>
         /// Constructor of class
         /// </summary>
-        /// <param name="id">Id of user</param>
-        /// <param name="identity">Identity object</param>
+        /// <param name="systemUser">Системный пользователь</param>
         /// <param name="sessionId">Identity of session</param>
-        /// <param name="permissions">Permissions of the user</param>
-        /// <param name="roles">User roles</param>
-        /// <param name="termsOfUseAccepted">Flag, showing whether user has accepted terms of use</param>
-        public UserPrincipal(IIdentity identity, Guid id, Guid sessionId, List<Guid> permissions, List<Guid> roles, bool termsOfUseAccepted)
-            : base(identity, roles.Select(r => r.ToString()).ToArray())
+        public UserPrincipal(SystemUser systemUser, Guid sessionId)
+            : this(new GenericIdentity(systemUser.Name), systemUser, sessionId) { }
+
+        /// <summary>
+        /// Constructor of class
+        /// </summary>
+        /// <param name="identity">Базовая реализация объекта <see cref="T:System.Security.Principal.IIdentity"/>, представляющего любого пользователя.</param>
+        /// <param name="systemUser">Системный пользователь</param>
+        /// <param name="sessionId">Identity of session</param>
+        public UserPrincipal(IIdentity identity, SystemUser systemUser, Guid sessionId)
+            : base(identity, new[] { systemUser.UserRole.Id.ToString() })
         {
-            Id = id;
             SessionId = sessionId;
-            RoleTypes = roles;
-            Permissions = permissions;
-            TermsOfUseAccepted = termsOfUseAccepted;
+            SystemUser = systemUser;
         }
 
         #endregion Constructors
-
-        /// <summary>
-        /// Cheeck user permission to the passed resource
-        /// </summary>
-        /// <param name="permission"></param>
-        /// <returns></returns>
-        public bool HasPermission(Guid permission)
-        {
-            return Permissions.Contains(permission);
-        }
 
         /// <summary>
         /// Check is user in role
@@ -129,15 +87,15 @@ namespace Common.Security
         /// <returns></returns>
         public bool IsInRole(Guid role)
         {
-            return RoleTypes.Contains(role);
+            return SystemUser.UserRole.Id == role;
         }
-        
+
 
         #region ICloneable Members
 
         public object Clone()
         {
-            var clone = new UserPrincipal(Identity, Id, SessionId, new List<Guid>(Permissions), new List<Guid>(RoleTypes), TermsOfUseAccepted);
+            var clone = new UserPrincipal(Identity, SystemUser, SessionId);
             return clone;
         }
 

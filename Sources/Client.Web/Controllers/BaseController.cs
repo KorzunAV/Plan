@@ -4,8 +4,6 @@ using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Common.Exeptions;
-using Data.IoC;
-using Ninject;
 using NLog;
 
 namespace Client.Web.Controllers
@@ -41,7 +39,6 @@ namespace Client.Web.Controllers
         public const string CurrentPage = "curPage";
         public const string ItemPerPage = "itemPerPage";
 
-        protected static StandardKernel Kernel;
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
       
 
@@ -56,15 +53,7 @@ namespace Client.Web.Controllers
 			get { return (RouteValueDictionary)Session[CurrentRouteDataKey]; }
 			set { Session[CurrentRouteDataKey] = value; }
 		}
-
-
-
-        public BaseController()
-        {
-            Kernel = new StandardKernel(new DataModule());
-        }
-
-
+        
 		#region [support]
 		public static string GetControllerName(Type controllerType, bool removeControllerPostfix)
 		{
