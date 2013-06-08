@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Client.Web.Controllers.Controls.Footer
+@using Client.Web.Controllers.Controls.Header
+
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -14,21 +17,7 @@
     </head>
     <body>
         <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title">MVC jqGrid</p>
-                </div>
-                <div class="float-right">
-                    <section id="login">
-                        &nbsp;
-                    </section>
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("TestGrid", "Index", "TestGrid")</li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+           @Html.Action(HeaderControlController.IndexAction, HeaderControlController.Name)
         </header>
         <div id="body">
             @RenderSection("featured", false)
@@ -37,11 +26,7 @@
             </section>
         </div>
         <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; 2011-@DateTime.Now.Year, <a href="http://www.skaele.nl">Skaele Software Development</a>, The Netherlands</p>
-                </div>
-            </div>
+                @Html.Action(FooterControlController.IndexAction, FooterControlController.Name)
         </footer>
     </body>
 </html>

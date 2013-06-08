@@ -15,8 +15,7 @@ namespace Client.Web.Controllers
         {
             Dao = dao;
         }
-
-
+        
         public ActionResult Index()
         {
             return View();

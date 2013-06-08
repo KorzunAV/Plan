@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Client.Web.App_GlobalResources;
 using Common.Exeptions;
 using NLog;
 
@@ -29,7 +30,6 @@ namespace Client.Web.Controllers
 		}
 	}
 
-
 	public class BaseController : Controller
 	{
         protected const string ModelStateKey = "7H5L1C3O-1L3I-2G45-I1TG-1K2Y6V71P5Y3";
@@ -54,50 +54,10 @@ namespace Client.Web.Controllers
 			set { Session[CurrentRouteDataKey] = value; }
 		}
         
-		#region [support]
-		public static string GetControllerName(Type controllerType, bool removeControllerPostfix)
-		{
-			if (removeControllerPostfix)
-			{
-				return controllerType.Name.Replace("Controller", String.Empty);
-			}
-			return controllerType.Name;
-		}
-
-		protected virtual bool IsRequestOfType(HttpVerbs httpVerb)
-		{
-			return Request.RequestType == httpVerb.ToString().ToUpperInvariant();
-		}
-
 		protected override void OnActionExecuting(ActionExecutingContext filterContext)
 		{
-
-			if (PreviousRouteData == null ||
-				!Equals(CurrentRouteData.Count, filterContext.RouteData.Values.Count) ||
-				!filterContext.RouteData.Values.Values.All(s => CurrentRouteData.Values.Contains(s)))
-			{
-				PreviousRouteData = CurrentRouteData;
-				CurrentRouteData = filterContext.RouteData.Values;
-			}
-
-
-			if (!filterContext.IsChildAction)
-			{
-				var state = TempData[ModelStateKey] as ModelStateDictionary;
-				if (state != null && !state.ContainsKey(ModelStateKey))
-				{
-					state.Add(ModelStateKey, new ModelState());
-					foreach (var item in state)
-					{
-						if (!ModelState.ContainsKey(item.Key))
-						{
-							ModelState.Add(item);
-						}
-					}
-					TempData[ModelStateKey] = null;
-				}
-			}
-
+            SetCurrentRoute(filterContext);
+            UpdateModelState(filterContext);
 			base.OnActionExecuting(filterContext);
 		}
 		
@@ -141,6 +101,54 @@ namespace Client.Web.Controllers
 
 			base.OnException(filterContext);
 		}
+
+
+        #region [support]
+
+        public static string GetControllerName(Type controllerType, bool removeControllerPostfix)
+        {
+            if (removeControllerPostfix)
+            {
+                return controllerType.Name.Replace("Controller", String.Empty);
+            }
+            return controllerType.Name;
+        }
+        
+        protected virtual bool IsRequestOfType(HttpVerbs httpVerb)
+        {
+            return Request.RequestType == httpVerb.ToString().ToUpperInvariant();
+        }
+
+        private void SetCurrentRoute(ActionExecutingContext filterContext)
+        {
+            if (PreviousRouteData == null ||
+                !Equals(CurrentRouteData.Count, filterContext.RouteData.Values.Count) ||
+                !filterContext.RouteData.Values.Values.All(s => CurrentRouteData.Values.Contains(s)))
+            {
+                PreviousRouteData = CurrentRouteData;
+                CurrentRouteData = filterContext.RouteData.Values;
+            }
+        }
+
+        private void UpdateModelState(ActionExecutingContext filterContext)
+        {
+            if (!filterContext.IsChildAction)
+            {
+                var state = TempData[ModelStateKey] as ModelStateDictionary;
+                if (state != null && !state.ContainsKey(ModelStateKey))
+                {
+                    state.Add(ModelStateKey, new ModelState());
+                    foreach (var item in state)
+                    {
+                        if (!ModelState.ContainsKey(item.Key))
+                        {
+                            ModelState.Add(item);
+                        }
+                    }
+                    TempData[ModelStateKey] = null;
+                }
+            }
+        }
 
 		protected virtual void MoveActionParametersTempData(IDictionary<string, object> actionParameters)
 		{

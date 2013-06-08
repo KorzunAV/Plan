@@ -134,6 +134,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionResults\RedirectToLoginResult.cs" />
+    <Compile Include="App_GlobalResources\Views.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Views.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -142,20 +147,23 @@
     <Compile Include="Attributes\ActionFilters\SecurityAttribute.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\Controls\Footer\FooterControlController.cs" />
+    <Compile Include="Controllers\Controls\Header\HeaderControlController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TestGridController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="Errors.Designer.cs">
+    <Compile Include="App_GlobalResources\Errors.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Errors.resx</DependentUpon>
     </Compile>
     <Compile Include="Extensions\HtmlHelperExtension.cs" />
+    <Compile Include="Extensions\ResourcesHelper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="IoC\ControllersModule.cs" />
     <Compile Include="Models\Controls\Footer\FooterModel.cs" />
+    <Compile Include="NinjectDependencyResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -342,7 +350,8 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
-    <None Include="Views\Shared\Controls\FooterControl.cshtml" />
+    <None Include="Views\Shared\Controls\Footer\FooterControl.cshtml" />
+    <None Include="Views\Shared\Controls\Header\HeaderControl.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -360,6 +369,10 @@
       <Project>{65019612-E075-411E-BE19-515D9DB882DC}</Project>
       <Name>Common.Exeptions</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common.Security\Common.Security.csproj">
+      <Project>{F26D487A-1E98-4BA5-8C6C-47390094E79E}</Project>
+      <Name>Common.Security</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Data.IoC\Data.IoC.csproj">
       <Project>{3FCF3E43-6053-4FE6-989F-A32CDADC8986}</Project>
       <Name>Data.IoC</Name>
@@ -370,7 +383,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Errors.resx">
+    <Content Include="App_GlobalResources\Views.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Views.designer.cs</LastGenOutput>
+    </Content>
+    <EmbeddedResource Include="App_GlobalResources\Errors.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Errors.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>

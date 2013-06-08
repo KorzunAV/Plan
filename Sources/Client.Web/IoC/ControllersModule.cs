@@ -1,5 +1,7 @@
 ﻿using Client.Web.Controllers;
+using Client.Web.Controllers.Controls;
 using Client.Web.Controllers.Controls.Footer;
+using Client.Web.Controllers.Controls.Header;
 using Common.Data.Core;
 using Ninject;
 using Ninject.Modules;
@@ -12,12 +14,13 @@ namespace Client.Web.IoC
         {
             Bind<TestGridController>()
                .ToSelf()
-               .InSingletonScope()
                .WithConstructorArgument("Dao", Kernel.Get<IBaseDao>());
 
             Bind<FooterControlController>()
-                .ToSelf()
-                .InSingletonScope();
+                .ToSelf();
+
+            Bind<HeaderControlController>()
+                .ToSelf();
         }
     }
 }

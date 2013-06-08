@@ -1,12 +1,13 @@
 ﻿using System.Web.Mvc;
 using Client.Web.Models.Controls.Footer;
+using Common.Security;
 
 namespace Client.Web.Controllers.Controls.Footer
 {
     [AllowAnonymous]
     public class FooterControlController : BaseController<FooterControlController>
     {
-        public const string FooterControlPath = "Controls/FooterControl";
+        public const string FooterControlPath = "Controls/Footer/FooterControl";
 
         [ChildActionOnly]
         public PartialViewResult Index()
@@ -25,8 +26,7 @@ namespace Client.Web.Controllers.Controls.Footer
         protected virtual void UpdateEnabledModules(FooterModel model)
         {
             model.HomeUrl = Url.Action(IndexAction, HomeController.Name);
-
-            model.IsMyAccountEnabled = ModulesSecurity.IsModuleVisible(ModuleOptionPermissions.MODULE_ID_MY_ACCOUNT_GUID);
+            model.IsMyAccountEnabled = UserPrincipal.IsAuthenticated;
         }
     }
 }

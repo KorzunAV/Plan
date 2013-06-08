@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Web;
-using System.Web.Compilation;
-using System.Web.Mvc;
-using System.Web.Mvc.Html;
-using System.Web.Routing;
-
+﻿using System.Web.Mvc;
 
 namespace Client.Web.Extensions
 {
@@ -24,7 +14,9 @@ namespace Client.Web.Extensions
         /// </summary>
         public static string Resource(this HtmlHelper html, string key)
         {
-            return (html.ViewContext.HttpContext.GetGlobalResourceObject(string.Empty, key) ?? key) as string;
+            return (html.ViewContext.HttpContext.GetGlobalResourceObject(ResourcesHelper.GetViewSourceName, key) ?? key) as string;
+            //return html.Resource(ResourcesHelper.GetViewSourceName, key);
+
         }
         /// <summary>
         ///     Gets resource from global resources.
@@ -39,6 +31,7 @@ namespace Client.Web.Extensions
         public static string ImageResource(this HtmlHelper html, string key)
         {
             return (html.ViewContext.HttpContext.GetGlobalResourceObject("Images", key) ?? key) as string;
+            //return html.Resource("Images", key);
         }
 
         #endregion
