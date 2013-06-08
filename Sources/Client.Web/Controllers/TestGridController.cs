@@ -6,6 +6,8 @@ using Entities;
 
 namespace Client.Web.Controllers
 {
+    [Attributes.ActionFilters.Localize]
+    [Attributes.ActionFilters.AllowAnonymous]
     public class TestGridController : BaseController<TestGridController>
     {
         public const string ListAction = "List";

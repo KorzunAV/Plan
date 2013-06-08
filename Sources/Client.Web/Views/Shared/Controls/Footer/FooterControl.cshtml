@@ -1,4 +1,4 @@
-﻿@using Client.Web.Extensions
+﻿@using Client.Web.App_GlobalResources
 @model Client.Web.Models.Controls.Footer.FooterModel
 
 <div class="clearFixBorder">
@@ -8,7 +8,8 @@
         <ul>
             <li>
                 <h3>
-                    <a href="@Model.HomeUrl">@Html.Resource("Home")</a></h3>
+                    <a href="@Model.HomeUrl">@Views.Home</a>
+                </h3>
             </li>
         </ul>
     </div>

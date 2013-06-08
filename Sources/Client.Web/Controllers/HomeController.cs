@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace Client.Web.Controllers
 {
+    [Attributes.ActionFilters.Localize]
+    [Attributes.ActionFilters.AllowAnonymous]
 	public class HomeController : BaseController<HomeController>
 	{
 		public ActionResult Index()

@@ -37,5 +37,7 @@ namespace Entities
             get { return _userRole; }
             set { _userRole = value; }
         }
+
+        public virtual string Culture { get; set; }
     }
 }

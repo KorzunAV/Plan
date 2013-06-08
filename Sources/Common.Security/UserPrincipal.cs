@@ -90,6 +90,17 @@ namespace Common.Security
             return SystemUser.UserRole.Id == role;
         }
 
+        public static string GetCulture
+        {
+            get
+            {
+                if (CurrentUser != null)
+                {
+                    return CurrentUser.SystemUser.Culture;
+                }
+                return string.Empty;
+            }
+        }
 
         #region ICloneable Members
 
