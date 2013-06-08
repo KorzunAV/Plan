@@ -17,8 +17,9 @@
     </head>
     <body>
         <header>
-           @Html.Action(HeaderControlController.IndexAction, HeaderControlController.Name)
+            @Html.Action(HeaderControlController.IndexAction, HeaderControlController.Name)
         </header>
+        @Html.ValidationSummary()
         <div id="body">
             @RenderSection("featured", false)
             <section class="content-wrapper main-content clear-fix">
@@ -26,7 +27,7 @@
             </section>
         </div>
         <footer>
-                @Html.Action(FooterControlController.IndexAction, FooterControlController.Name)
+            @Html.Action(FooterControlController.IndexAction, FooterControlController.Name)
         </footer>
     </body>
 </html>

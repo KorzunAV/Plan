@@ -2,7 +2,6 @@
 using System.Web.Mvc;
 using System.Web.Routing;
 using Client.Web.Controllers;
-using Client.Web.Controllers.Controls.Footer;
 using Client.Web.IoC;
 using Data.IoC;
 using MvcContrib.TestHelper;
