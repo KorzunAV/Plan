@@ -151,6 +151,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\Controls\Footer\FooterControlController.cs" />
     <Compile Include="Controllers\Controls\Header\HeaderControlController.cs" />
+    <Compile Include="Controllers\Controls\Menu\LeftMenuControlController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TestGridController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -164,6 +165,7 @@
     </Compile>
     <Compile Include="IoC\ControllersModule.cs" />
     <Compile Include="Models\Controls\Footer\FooterModel.cs" />
+    <Compile Include="Models\Controls\Menu\LeftMenuModel.cs" />
     <Compile Include="NinjectDependencyResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -349,10 +351,13 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\MasterPages\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Views\Shared\Controls\Footer\FooterControl.cshtml" />
     <None Include="Views\Shared\Controls\Header\HeaderControl.cshtml" />
+    <None Include="Views\Shared\Controls\Menu\LeftMenuControl.cshtml" />
+    <None Include="Views\Shared\MasterPages\_OneColumnLayout.cshtml" />
+    <None Include="Views\Shared\MasterPages\_TwoColumnsLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,8 +1,10 @@
 ﻿@using Client.Web.Controllers
 @using MvcJqGrid
+@{
+    Layout = "~/Views/Shared/MasterPages/_TwoColumnsLayout.cshtml";
+}
 
-
-<div>
+<div class="right-columnAlt">
 	@(Html.Grid("Basic")
     .SetCaption("UserRole")
     .AddColumn(new Column("Id").SetLabel("Id"))

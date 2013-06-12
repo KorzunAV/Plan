@@ -1,12 +1,11 @@
-﻿/* ClearFix
----------------------------------------------------------------------------------------------------------------------------------*/
+﻿/* __________________________________________ ClearFix __________________________________________*/
 .clearFix			{ padding: 0; margin: 0; height: 1px;  }
 .clearFixBorder		{ height: 1px; margin: 0 0 10px 0; }
 .clearFix.Alt		{ margin: 0 0 10px 0; }
-/* Footer
----------------------------------------------------------------------------------------------------------------------------------*/
+
+/* __________________________________________ Footer __________________________________________*/
 #footerContainer		{ width: 100%; margin: 50px 0 0 0; padding-top: 20px; }
-.footer					{ padding: 20px 0 10px 40px; width: 960px; }
+.footer					{ padding: 20px 0 10px 40px; font-size: .8em;}
 #vwLogo					{ right: 30px; bottom: 15px; }
 .footer ul				{ margin-bottom: 20px; }
 .footer ul li			{ font-size: 11px; line-height: 12pt; width: 100%;  }
@@ -17,3 +16,52 @@
 .footer	p				{ font-size: 10px; margin-bottom: 10px; }
 .listContainers			{ width: 150px; margin-right: 20px; margin-left: 60px; }
 .listContainers.end		{ margin-left: 80px; }
+
+/* __________________________________________ Core __________________________________________*/
+.contentWrapper		{ float: left; width: 100%; }
+.left-column		{ width: 200px; height: 100%; float: left; margin-left: 0; }
+.right-column		{ margin-left: 200px; min-width: 760px; }
+
+.left-columnAlt		{ width: 240px; height: 100%; float: left; margin-left: 0; margin-bottom: 20px; }
+.right-columnAlt	{ margin-left: 240px; min-width: 720px; }
+.full-columnAlt		{ margin-left: 20px; min-width: 940px; }
+
+.left-columnAlt.stores	{ margin-top: 128px; }
+
+/* __________________________________________ Main navigation __________________________________________*/
+.menu-bar-holder			{ clear: both; display: block; position: relative; width: 100%;  }
+ul#menu-bar					{ display: block; margin: 0 20px 0 0; padding: 8px 0 11px 15px; overflow: hidden; height: 30px;  }
+							/* Main module classes */
+							.menu-bar-holder#searchBuy ul#menu-bar		{ }
+							.menu-bar-holder#account ul#menu-bar		{ }
+							.menu-bar-holder#projects ul#menu-bar		{ }
+							.menu-bar-holder#supplier ul#menu-bar		{ }
+							.menu-bar-holder#reports ul#menu-bar		{ }
+							.menu-bar-holder#tenders ul#menu-bar		{ }
+
+ul#menu-bar li				{ float: left; padding: 0; margin: 0; }
+			li.searchBuy 	{ width: 16%;}
+			li.myAccount   	{ width: 16%;}
+			li.myProjects 	{ width: 18%;}
+			li.catMan 		{ width: 24%;}
+			li.reports  	{ width: 12%;}
+			li.tender 		{ width: 12%;}
+ul#menu-bar li a			{ padding: 7px 10px 10px 10px; height: 12px; margin: 0 4px; display: block; }
+			li.searchBuy a.active 	{ }
+			li.myAccount a.active	{ }
+			li.myProjects a.active	{ }
+			li.catMan a.active		{ }
+			li.reports a.active		{ }
+			li.tender a.active		{ }
+			
+			ul#menu-bar li a:hover 	{ height: 10px;}
+			
+.menubarCapend				{ float: right; width: 24px; height: 50px; display: block; position: absolute; right: 20px; top: 0; }
+							/* Main module classes */
+							.menu-bar-holder#searchBuy .menubarCapend			{ }
+							.menu-bar-holder#account .menubarCapend				{ }
+							.menu-bar-holder#projects .menubarCapend			{ }
+							.menu-bar-holder#supplier .menubarCapend			{ }
+							.menu-bar-holder#reports .menubarCapend				{ }
+							.menu-bar-holder#tenders .menubarCapend				{ }
+		

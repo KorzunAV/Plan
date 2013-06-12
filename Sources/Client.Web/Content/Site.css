@@ -34,7 +34,7 @@ a:hover {
     background-color: #c7d1d6;
 }
 
-header, footer, hgroup
+header, hgroup
 nav, section {
     display: block;
 }
@@ -112,12 +112,7 @@ h5, h6 {
         background: url("images/heroaccent.png") no-repeat;
     }
 
-footer {
-    clear: both;
-    background-color: #e2e2e2;
-    font-size: .8em;
-    height: 100px;
-}
+
 
 
 /* site title

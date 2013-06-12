@@ -1,0 +1,11 @@
+﻿@using Client.Web.Controllers.Controls.Menu
+@{
+    Layout =  "~/Views/Shared/MasterPages/_Layout.cshtml";
+}
+
+<div class="contentWrapper">
+    <div class="left-columnAlt">
+        @Html.Action(LeftMenuControlController.IndexAction, LeftMenuControlController.Name)
+    </div>
+    @RenderBody()
+</div>

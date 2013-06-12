@@ -1,12 +1,11 @@
-﻿/* ClearFix
----------------------------------------------------------------------------------------------------------------------------------*/
+﻿/* __________________________________________ ClearFix __________________________________________*/
 .clearFix			{ }
 .clearFixBorder		{ border-top: 1px solid #d4d4d4; border-bottom: 1px solid #f5f5f5; background: #eeeeee; }
 .clearFix.Alt		{ }
-/* Footer
----------------------------------------------------------------------------------------------------------------------------------*/
+
+/* __________________________________________ Footer __________________________________________*/
 #footerContainer		{ }
-.footer					{ }
+.footer					{ background-color: #e2e2e2; }
 #vwLogo					{ }
 .footer ul				{ }
 .footer ul li			{ }
@@ -17,3 +16,50 @@
 .footer	p				{ color: #666; }
 .listContainers			{ }
 h3.footerTitles			{ }
+
+/* __________________________________________ Core __________________________________________*/
+.contentWrapper		{ }
+.left-column		{ }
+.right-column		{ }
+
+.left-columnAlt		{ }
+.right-columnAlt	{ }
+.full-columnAlt		{ }
+
+.menu-bar-holder			{ }
+ul#menu-bar					{ }
+							/* Main module classes */
+							.menu-bar-holder#searchBuy ul#menu-bar		{ background: url(../images/nav/searchBuyBackground.jpg) no-repeat; }
+							.menu-bar-holder#account ul#menu-bar		{ background: url(../images/nav/accountBackground.jpg) no-repeat; }
+							.menu-bar-holder#projects ul#menu-bar		{ background: url(../images/nav/projectsBackground.jpg) no-repeat; }
+							.menu-bar-holder#supplier ul#menu-bar		{ background: url(../images/nav/supplierBackground.jpg) no-repeat; }
+							.menu-bar-holder#reports ul#menu-bar		{ background: url(../images/nav/reportsBackground.jpg) no-repeat; }
+							.menu-bar-holder#tenders ul#menu-bar		{ background: url(../images/nav/tendersBackground.jpg) no-repeat; }
+
+ul#menu-bar li				{ text-shadow: 0 2px 1px #333;}
+			li.searchBuy 	{ }
+			li.myAccount   	{ }
+			li.myProjects 	{ }
+			li.catMan 		{ }
+			li.reports  	{ }
+			li.tender 		{ }
+ul#menu-bar li a			{ color: #FFF; }
+			li.searchBuy a.active 	{ background: #145e81;}
+			li.myAccount a.active	{ background: #d2702c;}
+			li.myProjects a.active	{ background: #0290c7;}
+			li.catMan a.active		{ background: #792571;}
+			li.reports a.active		{ background: #00548e;}
+ul#menu-bar	li.tender a.active		{ background: #c1d831; color: #5f5555; text-shadow: none;}  /* To target the tenders tab specifically because the text is not highly visible as white */
+			
+ul#menu-bar li a:hover 			{ background: #535353;}
+ul#menu-bar li.tender a:hover 	{ background: #535353; color: #FFF;} /* To target the tenders tab specifically as the above selector will not change the background colour */
+			
+.menubarCapend				{ }
+							/* Main module classes */
+							.menu-bar-holder#searchBuy .menubarCapend			{ background:url(../images/nav/searchBuyBackgroundCapEnd.jpg); }
+							.menu-bar-holder#account .menubarCapend				{ background:url(../images/nav/accountBackgroundCapEnd.jpg); }
+							.menu-bar-holder#projects .menubarCapend			{ background:url(../images/nav/projectsBackgroundCapEnd.jpg); }
+							.menu-bar-holder#supplier .menubarCapend			{ background:url(../images/nav/supplierBackgroundCapEnd.jpg); }
+							.menu-bar-holder#reports .menubarCapend				{ background:url(../images/nav/reportsBackgroundCapEnd.jpg); }
+							.menu-bar-holder#tenders .menubarCapend				{ background:url(../images/nav/tendersBackgroundCapEnd.jpg); }
+							
