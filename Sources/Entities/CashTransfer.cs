@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Entities
 {
@@ -7,7 +8,12 @@ namespace Entities
 	/// </summary>
 	public class CashTransfer : EntityBase
 	{
-		/// <summary>
+        /// <summary>
+        /// Дата создания запроса.
+        /// </summary>
+        public virtual DateTime DareCreation { get; set; }
+
+	    /// <summary>
 		/// Размер перевода.
 		/// </summary>
 		public virtual decimal TransferCount { get; set; }

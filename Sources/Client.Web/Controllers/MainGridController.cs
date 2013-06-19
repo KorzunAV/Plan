@@ -8,12 +8,12 @@ namespace Client.Web.Controllers
 {
     [Attributes.ActionFilters.Localize]
     [Attributes.ActionFilters.AllowAnonymous]
-    public class TestGridController : BaseController<TestGridController>
+    public class MainGridController : BaseController<MainGridController>
     {
         public const string ListAction = "List";
         private IBaseDao Dao { get; set; }
 
-        public TestGridController(IBaseDao dao)
+        public MainGridController(IBaseDao dao)
         {
             Dao = dao;
         }
@@ -25,7 +25,7 @@ namespace Client.Web.Controllers
 
         public ActionResult List(GridSettings gridSettings)
         {
-            var items = Dao.SelectRange<UserRole>(new SelectCondition());
+            var items = Dao.SelectRange<CashTransfer>(new SelectCondition());
 
             var jsonData = new
             {

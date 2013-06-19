@@ -151,9 +151,9 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\Controls\Footer\FooterControlController.cs" />
     <Compile Include="Controllers\Controls\Header\HeaderControlController.cs" />
+    <Compile Include="Controllers\MainGridController.cs" />
     <Compile Include="Controllers\Controls\Menu\LeftMenuControlController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\TestGridController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="App_GlobalResources\Errors.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -355,6 +355,7 @@
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Views\Shared\Controls\Footer\FooterControl.cshtml" />
     <None Include="Views\Shared\Controls\Header\HeaderControl.cshtml" />
+    <Content Include="Views\MainGrid\Index.cshtml" />
     <None Include="Views\Shared\Controls\Menu\LeftMenuControl.cshtml" />
     <None Include="Views\Shared\MasterPages\_OneColumnLayout.cshtml" />
     <None Include="Views\Shared\MasterPages\_TwoColumnsLayout.cshtml" />
@@ -402,9 +403,6 @@
       <LastGenOutput>Errors.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\TestGrid\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

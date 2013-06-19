@@ -1,27 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Entities.CashAccount" Collapsed="true">
+  <Class Name="Entities.CashAccount">
     <Position X="7.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAACAAAAIQAAAAAAAAAQACAAAAAAAA=</HashCode>
       <FileName>CashAccount.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Entities.UserRole" Collapsed="true">
+  <Class Name="Entities.UserRole">
     <Position X="12" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>UserRole.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Entities.CashTransfer" Collapsed="true">
+  <Class Name="Entities.CashTransfer">
     <Position X="18.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAEAAAEAAAAAAAAAAAAAQAAAEAAQAAAAAIAQAA=</HashCode>
+      <HashCode>AAQAAAAEAAAEAAAAAAAAAAAAAQAAAEAAQAAAAAIAYAA=</HashCode>
       <FileName>CashTransfer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Entities.CurrencyType" Collapsed="true">
+  <Class Name="Entities.CurrencyType">
     <Position X="23.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
@@ -31,40 +31,40 @@
   <Class Name="Entities.EntityBase" Collapsed="true">
     <Position X="16.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAACAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>IAACAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>EntityBase.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Entities.ExchangeArchive" Collapsed="true">
+  <Class Name="Entities.ExchangeArchive">
     <Position X="14.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAABAAAAAAAAAAAAAAAAAAAACABAAAAAAAAAAA=</HashCode>
       <FileName>ExchangeArchive.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Entities.SystemUser" Collapsed="true">
+  <Class Name="Entities.SystemUser">
     <Position X="21" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgCAAAQAAAAAAA=</HashCode>
+      <HashCode>AACAIAAAAAAAAAAAAAAAAAQAAQAABAgAAAAQAAAAAAA=</HashCode>
       <FileName>SystemUser.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Entities.Tag" Collapsed="true">
+  <Class Name="Entities.Tag">
     <Position X="25.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAACAAAAAAAA=</HashCode>
       <FileName>Tag.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Entities.TransferSubType" Collapsed="true">
+  <Class Name="Entities.TransferSubType">
     <Position X="9.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>TransferSubType.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Entities.TransferType" Collapsed="true">
+  <Class Name="Entities.TransferType">
     <Position X="16.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
