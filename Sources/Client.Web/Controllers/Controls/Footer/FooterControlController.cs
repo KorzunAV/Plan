@@ -4,29 +4,37 @@ using Common.Security;
 
 namespace Client.Web.Controllers.Controls.Footer
 {
-    [AllowAnonymous]
-    public class FooterControlController : BaseController<FooterControlController>
-    {
-        public const string FooterControlPath = "Controls/Footer/FooterControl";
+	[AllowAnonymous]
+	public class FooterControlController : BaseController<FooterControlController>
+	{
+		public const string FooterControlPath = "Controls/Footer/FooterControl";
 
-        [ChildActionOnly]
-        public PartialViewResult Index()
-        {
-            FooterModel model = CreateModel();
+		[ChildActionOnly]
+		public PartialViewResult Index()
+		{
+			FooterModel model = CreateModel();
 
-            UpdateEnabledModules(model);
-            return PartialView(FooterControlPath, model);
-        }
+			UpdateEnabledModules(model);
+			return PartialView(FooterControlPath, model);
+		}
 
-        protected virtual FooterModel CreateModel()
-        {
-            return new FooterModel();
-        }
+		protected virtual FooterModel CreateModel()
+		{
+			return new FooterModel();
+		}
 
-        protected virtual void UpdateEnabledModules(FooterModel model)
-        {
-            model.HomeUrl = Url.Action(IndexAction, HomeController.Name);
-            model.IsMyAccountEnabled = UserPrincipal.IsAuthenticated;
-        }
-    }
+		protected virtual void UpdateEnabledModules(FooterModel model)
+		{
+			model.HomeUrl = Url.Action(IndexAction, HomeController.Name);
+			model.IsMyAccountEnabled = true;
+
+			model.CurrencyTypeUrl = Url.Action(IndexAction, CurrencyTypeController.Name);
+			model.IsCurrencyTypeEnabled = UserPrincipal.IsAuthenticated
+				&& (UserPrincipal.CurrentUser.IsInRole(Constants.Roles.AdminPrincipal)
+					|| UserPrincipal.CurrentUser.IsInRole(Constants.Roles.SuPrincipal));
+
+			model.CashTransferUrl = Url.Action(IndexAction, MainGridController.Name);
+			model.IsCashTransferEnabled = UserPrincipal.IsAuthenticated;
+		}
+	}
 }

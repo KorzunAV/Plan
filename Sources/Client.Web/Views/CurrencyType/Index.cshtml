@@ -1,18 +1,14 @@
 ﻿@using Client.Web.App_GlobalResources
 @using Client.Web.Controllers
 @using MvcJqGrid
+
 @{
 	Layout = "~/Views/Shared/MasterPages/_TwoColumnsLayout.cshtml";
 }
 <div class="right-columnAlt">
 	@(Html.Grid("Basic")
-	.SetCaption(Views.CashTransfer)
-	.AddColumn(new Column("DareCreation").SetLabel(Views.DareCreation))
-	.AddColumn(new Column("CurrencyType.Name").SetLabel(Views.CurrencyType))
-	.AddColumn(new Column("TransferCount").SetLabel(Views.TransferCount))
-	.AddColumn(new Column("TransferType.Name").SetLabel(Views.TransferType))
-	.AddColumn(new Column("Comment").SetLabel(Views.Comment))
-	.AddColumn(new Column("TransferSubType.Name").SetLabel(Views.TransferSubType))
+	.SetCaption(Views.CurrencyType)
+	.AddColumn(new Column("Name").SetLabel(Views.CurrencyType))
 	.SetUrl(Url.Action(MainGridController.ListAction, MainGridController.Name))
 	.SetAutoWidth(true)
 	.SetRowNum(10)

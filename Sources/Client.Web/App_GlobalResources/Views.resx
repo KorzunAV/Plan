@@ -117,10 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CashTransfer" xml:space="preserve">
+    <value>Денежный перевод</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Комментарий</value>
+  </data>
+  <data name="CurrencyType" xml:space="preserve">
+    <value>Тип валюты</value>
+  </data>
+  <data name="DareCreation" xml:space="preserve">
+    <value>Дата создания</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Главная</value>
   </data>
   <data name="MyAccount" xml:space="preserve">
     <value>Профиль</value>
+  </data>
+  <data name="ReceiverCashAccount" xml:space="preserve">
+    <value>Счет получателя</value>
+  </data>
+  <data name="SenderCashAccount" xml:space="preserve">
+    <value>Счет отправителя</value>
+  </data>
+  <data name="Tags" xml:space="preserve">
+    <value>Теги</value>
+  </data>
+  <data name="TransferCount" xml:space="preserve">
+    <value>Размер перевода</value>
+  </data>
+  <data name="TransferSubType" xml:space="preserve">
+    <value>Подтип перевода</value>
+  </data>
+  <data name="TransferType" xml:space="preserve">
+    <value>Тип перевода</value>
   </data>
 </root>

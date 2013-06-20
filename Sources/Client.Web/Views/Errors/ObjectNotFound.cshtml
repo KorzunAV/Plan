@@ -1,0 +1,15 @@
+﻿@using MP2.Core.Controlling.Controllers;
+@{
+    ViewBag.Title = "Page not found";
+}
+<div class="contentFixed">
+    <div class="error no-validation-summary">
+        <div id="icon">
+            <img alt="This object has not been found as it has been modified by another user" src="@Url.ThemeContent(@"error/error.png")">
+        </div>
+        <h2>
+            This object has not been found as it has been modified by another user</h2>
+        <p>
+            Your changes cannot be made. Please exit and try again later.</p>
+    </div>
+</div>

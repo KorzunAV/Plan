@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Web.Test", "Client.W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Security", "Common.Security\Common.Security.csproj", "{F26D487A-1E98-4BA5-8C6C-47390094E79E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Web", "Common.Web\Common.Web.csproj", "{B8002A20-0F4D-4D88-BEAC-6A7F05B4BEBC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{F26D487A-1E98-4BA5-8C6C-47390094E79E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F26D487A-1E98-4BA5-8C6C-47390094E79E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F26D487A-1E98-4BA5-8C6C-47390094E79E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8002A20-0F4D-4D88-BEAC-6A7F05B4BEBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8002A20-0F4D-4D88-BEAC-6A7F05B4BEBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8002A20-0F4D-4D88-BEAC-6A7F05B4BEBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8002A20-0F4D-4D88-BEAC-6A7F05B4BEBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,5 +94,6 @@ Global
 		{65019612-E075-411E-BE19-515D9DB882DC} = {078055C0-AAC5-44A4-8010-850BEDFB0DD9}
 		{08A17397-4FFA-407D-8FE2-429A52DBE293} = {078055C0-AAC5-44A4-8010-850BEDFB0DD9}
 		{F26D487A-1E98-4BA5-8C6C-47390094E79E} = {078055C0-AAC5-44A4-8010-850BEDFB0DD9}
+		{B8002A20-0F4D-4D88-BEAC-6A7F05B4BEBC} = {078055C0-AAC5-44A4-8010-850BEDFB0DD9}
 	EndGlobalSection
 EndGlobal

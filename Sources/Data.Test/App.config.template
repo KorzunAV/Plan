@@ -1,20 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- 
-    Note: Add entries to the App.config file for configuration settings
-    that apply only to the Test project.
--->
 <configuration>
   <appSettings>
     <add key="IsTraceEnable" value="true" />
     <add key="ClientSettingsProvider.ServiceUri" value="" />
     <add key="TrainingTaskLoggerLevel" value="Debug"/>
   </appSettings>
+
   <connectionStrings>
-    <add name="DbConnectionString" connectionString="Data Source=QWS-KOA-7\SQL2005;Initial Catalog=KOATrainingTestDb;Integrated Security=True" providerName=".NET Framework Data Provider for SQL Server" />
-    <add name="DaoProvider" connectionString="Qulix.KorzunAV.TrainingTask.DataAdo.dll" providerName="Qulix.KorzunAV.TrainingTask.DataAdo" />    
-    <!--<add name="DaoProvider" connectionString="Qulix.KorzunAV.TrainingTask.DataNHibernate.dll" providerName="Qulix.KorzunAV.TrainingTask.DataNHibernate"/>-->
-    <add name="LogDirectory" connectionString=""/>
+    <add name="DbConnectionString" connectionString="Data Source=ИмяКомпа;Initial Catalog=ИмяТестовойБД;Integrated Security=True" providerName=".NET Framework Data Provider for SQL Server"/>
   </connectionStrings>
+
   <system.web>
     <membership defaultProvider="ClientAuthenticationMembershipProvider">
       <providers>

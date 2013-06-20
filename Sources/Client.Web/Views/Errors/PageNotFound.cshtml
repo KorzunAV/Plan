@@ -1,0 +1,24 @@
+﻿@using MP2.Core.Controlling.Controllers;
+@{
+    ViewBag.Title = "Page not found";
+}
+<div class="contentFixed">
+    <div class="error no-validation-summary">
+        <div id="icon">
+            <img alt="Page not found" src="@Url.ThemeContent(@"error/error.png")">
+        </div>
+        <h2>
+            Page not found</h2>
+        <p>
+            This page does not seem to exist. It may have been moved or deleted.</p>
+        <p>
+            <strong>You may find the following link helpful:</strong>
+        </p>
+        <ul>
+            <li><a href="@Url.Action(HomeController.IndexAction, HomeController.Name)">Home</a>
+            </li>
+        </ul>
+        <p>
+            For further help please contact the Valueworks Helpdesk.</p>
+    </div>
+</div>

@@ -5,13 +5,36 @@
 </div>
 <div class="footer">
     <div class="listContainers">
-        <ul>
-            <li>
-                <h3>
-                    <a href="@Model.HomeUrl">@Views.Home</a>
-                </h3>
-            </li>
-        </ul>
+		<ul>
+			@if(Model.IsMyAccountEnabled)
+			{
+				<li>
+					<h3>
+					
+						<a href="@Model.HomeUrl">@Views.Home</a>
+					
+					</h3>
+				</li>
+			}
+			@if(Model.IsCurrencyTypeEnabled)
+			{
+				<li>
+					<h3>
+					
+						<a href="@Model.CurrencyTypeUrl">@Views.CurrencyType</a>
+					
+					</h3>
+				</li>
+			}
+			@if(Model.IsCashTransferEnabled)
+			{
+				<li>
+					<h3>
+						<a href="@Model.CashTransferUrl">@Views.CashTransfer</a>
+					</h3>
+				</li>
+			}
+		</ul>
     </div>
 	<div class="listContainers">
     </div>

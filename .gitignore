@@ -38,3 +38,11 @@
 /Sources/Client.Web.Test/bin
 /Sources/Common.Security/obj
 /Sources/Common.Security/bin
+
+/Sources/Client.Web/Web.config
+/Sources/Client.Web/Web.Debug.config
+/Sources/Client.Web/Web.Release.config
+/Sources/Data.Test/App.config
+/Sources/Common.Web/bin
+/Sources/Common.Web/obj
+/Sources/Client.Web.Test/obj

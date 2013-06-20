@@ -1,16 +1,32 @@
 ﻿namespace Client.Web.Models.Controls.Footer
 {
-    public class FooterModel
-    {
-        #region Public pages
-        public string HomeUrl { get; set; }
-        #endregion Public pages
+	public class FooterModel
+	{
+		#region Public pages
+		public string HomeUrl { get; set; }
+		#endregion Public pages
 
-        #region MyAccount
+		#region MyAccount
 
-        public bool IsMyAccountEnabled { get; set; }
-        public string MyAccountUrl { get; set; }
+		public bool IsMyAccountEnabled { get; set; }
+		public string MyAccountUrl { get; set; }
 
-        #endregion
-    }
+		#endregion
+
+
+		#region CurrencyType
+
+		public bool IsCurrencyTypeEnabled { get; set; }
+		public string CurrencyTypeUrl { get; set; }
+
+		#endregion
+
+		
+		#region CashTransfer
+
+		public bool IsCashTransferEnabled { get; set; }
+		public string CashTransferUrl { get; set; }
+
+		#endregion
+	}
 }

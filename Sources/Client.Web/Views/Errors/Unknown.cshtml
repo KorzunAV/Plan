@@ -1,0 +1,23 @@
+﻿@using MP2.Core.Controlling.Controllers;
+@{
+    ViewBag.Title = "Unknown";
+}
+<div class="contentFixed">
+    <div class="error no-validation-summary">
+        <div id="icon">
+            <img alt="Unexpected error" src="@Url.ThemeContent(@"error/error.png")">
+        </div>
+        <h2>
+            Unexpected error</h2>
+        <p>
+            There was a problem accessing the page you requested. The page you are looking for
+            may have had its name changed, been removed or be temporarily unavailable.</p>
+        <p>
+            <strong>Please try the following:</strong></p>
+        <ul>
+            <li>If you manually typed the URL in the address bar, make sure that it is spelt correctly.</li>
+            <li>Use the navigation buttons at the top to navigate to the page you are looking for.</li>
+            <li>Click the back button to try another link.</li>
+        </ul>
+    </div>
+</div>

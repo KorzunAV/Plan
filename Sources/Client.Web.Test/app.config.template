@@ -3,10 +3,10 @@
 
 
   <connectionStrings>
-	  <add name="DbConnectionString" connectionString="Data Source=QWS-KOA-7\SQL2005;Initial Catalog=FDA_SEDD;User ID=SEDDOwner" providerName=".NET Framework Data Provider for SQL Server" />
-	  <!--<add name="DbConnectionString" connectionString="Data Source=QWS-KOA-7\SQL2005;Initial Catalog=TestPlan;Integrated Security=True" providerName=".NET Framework Data Provider for SQL Server" />-->
+    <add name="DbConnectionString" connectionString="Data Source=R2D3;Initial Catalog=TestPlan;Integrated Security=True" providerName=".NET Framework Data Provider for SQL Server" />
   </connectionStrings>
-    
+  
+  
   
   <runtime>
     <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">

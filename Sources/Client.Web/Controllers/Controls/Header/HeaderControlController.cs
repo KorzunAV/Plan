@@ -5,7 +5,7 @@ namespace Client.Web.Controllers.Controls.Header
     [AllowAnonymous]
     public class HeaderControlController : BaseController<HeaderControlController>
     {
-        private const string HeaderControlPath = "Controls/Header/HeaderControl";
+        public const string HeaderControlPath = "Controls/Header/HeaderControl";
 
         [ChildActionOnly]
         public PartialViewResult Index()

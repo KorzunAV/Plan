@@ -148,9 +148,16 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Attributes\ActionFilters\AllowAnonymousAttribute.cs" />
     <Compile Include="Attributes\ActionFilters\SecurityAttribute.cs" />
+    <Compile Include="Attributes\CustomErrorResult.cs" />
+    <Compile Include="Attributes\IsInRoleAttribute.cs" />
+    <Compile Include="Attributes\NoPermissionsResult.cs" />
+    <Compile Include="Controllers\AuthControllerBase.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\Controls\Footer\FooterControlController.cs" />
     <Compile Include="Controllers\Controls\Header\HeaderControlController.cs" />
+    <Compile Include="Controllers\CurrencyTypeController.cs" />
+    <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Controllers\MainGridController.cs" />
     <Compile Include="Controllers\Controls\Menu\LeftMenuControlController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -163,11 +170,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\GridHelper.cs" />
     <Compile Include="IoC\ControllersModule.cs" />
     <Compile Include="Models\Controls\Footer\FooterModel.cs" />
     <Compile Include="Models\Controls\Menu\LeftMenuModel.cs" />
     <Compile Include="NinjectDependencyResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Constants.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\accent.png" />
@@ -353,6 +362,11 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\MasterPages\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\Errors\NoPermission.cshtml" />
+    <Content Include="Views\Errors\ObjectNotFound.cshtml" />
+    <Content Include="Views\Errors\PageNotFound.cshtml" />
+    <Content Include="Views\Errors\Unknown.cshtml" />
+    <Content Include="Views\CurrencyType\Index.cshtml" />
     <None Include="Views\Shared\Controls\Footer\FooterControl.cshtml" />
     <None Include="Views\Shared\Controls\Header\HeaderControl.cshtml" />
     <Content Include="Views\MainGrid\Index.cshtml" />
@@ -379,6 +393,10 @@
     <ProjectReference Include="..\Common.Security\Common.Security.csproj">
       <Project>{F26D487A-1E98-4BA5-8C6C-47390094E79E}</Project>
       <Name>Common.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common.Web\Common.Web.csproj">
+      <Project>{B8002A20-0F4D-4D88-BEAC-6A7F05B4BEBC}</Project>
+      <Name>Common.Web</Name>
     </ProjectReference>
     <ProjectReference Include="..\Data.IoC\Data.IoC.csproj">
       <Project>{3FCF3E43-6053-4FE6-989F-A32CDADC8986}</Project>

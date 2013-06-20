@@ -1,5 +1,5 @@
-﻿@using Client.Web.Controllers
-
+﻿@using Client.Web.App_GlobalResources
+@using Client.Web.Controllers
 <header>
     <div class="content-wrapper">
         <div class="float-left">
@@ -9,7 +9,7 @@
     </div>
 </header>
 <div id="body">
-    <section class="featured">
+	<section class="featured">
         <div class="content-wrapper">
             <hgroup class="title">
                 <h1>Welcome to ASP.NET Web API!</h1>
@@ -28,7 +28,7 @@
             </p>
         </div>
     </section>
-    <section class="content-wrapper main-content clear-fix">
+	<section class="content-wrapper main-content clear-fix">
         <h3>We suggest the following steps:</h3>
         <ol class="round">
             <li class="one">
@@ -51,8 +51,8 @@
                 <a href="http://go.microsoft.com/fwlink/?LinkId=245164">Learn more…</a>
             </li>
             <li class="three">
-                <h5>Потестить грид</h5>
-                @Html.ActionLink("ссылка на тестовый грид.", MainGridController.IndexAction, MainGridController.Name)
+                <h5>@Views.CashTransfer</h5>
+                @Html.ActionLink(@Views.CashTransfer, MainGridController.IndexAction, MainGridController.Name)
             </li>
         </ol>
     </section>

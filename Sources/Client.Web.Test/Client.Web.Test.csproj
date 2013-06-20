@@ -73,6 +73,10 @@
     <Compile Include="Attributes\ActionFilters\SecurityAttributeTest.cs" />
     <Compile Include="Controllers\ControllerTestFixture.cs" />
     <Compile Include="Controllers\Controls\Footer\FooterControlControllerTest.cs" />
+    <Compile Include="Controllers\Controls\Header\HeaderControlControllerTest.cs" />
+    <Compile Include="Controllers\Controls\Menu\LeftMenuControlControllerTest.cs" />
+    <Compile Include="Controllers\CurrencyTypeControllerTest.cs" />
+    <Compile Include="Controllers\ErrorsControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RhinoMocksFactory.cs" />
     <Compile Include="RhinoMocksProxy.cs" />

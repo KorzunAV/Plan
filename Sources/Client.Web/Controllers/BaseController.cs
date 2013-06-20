@@ -5,6 +5,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Client.Web.App_GlobalResources;
 using Common.Exeptions;
+using Common.Web;
 using NLog;
 
 namespace Client.Web.Controllers
@@ -32,15 +33,15 @@ namespace Client.Web.Controllers
 
 	public class BaseController : Controller
 	{
-        protected const string ModelStateKey = "7H5L1C3O-1L3I-2G45-I1TG-1K2Y6V71P5Y3";
-        protected const string PreviousRouteDataKey = "35HUL25H-1L3I-G3L5-FG00-I33K20H32R66";
-        protected const string CurrentRouteDataKey = "HT11F5FH-YU1K-G3L5-FG00-I33K20H32R5F";
-        public const string IndexAction = "Index";
-        public const string CurrentPage = "curPage";
-        public const string ItemPerPage = "itemPerPage";
+		protected const string ModelStateKey = "7H5L1C3O-1L3I-2G45-I1TG-1K2Y6V71P5Y3";
+		protected const string PreviousRouteDataKey = "35HUL25H-1L3I-G3L5-FG00-I33K20H32R66";
+		protected const string CurrentRouteDataKey = "HT11F5FH-YU1K-G3L5-FG00-I33K20H32R5F";
+		public const string IndexAction = "Index";
+		public const string CurrentPage = "curPage";
+		public const string ItemPerPage = "itemPerPage";
 
-        private static readonly Logger Log = LogManager.GetCurrentClassLogger();
-      
+		public static readonly Logger Log = LogManager.GetCurrentClassLogger();
+		public virtual IApplicationStorage AppStorage { get; protected internal set; }
 
 		public RouteValueDictionary PreviousRouteData
 		{
@@ -53,14 +54,14 @@ namespace Client.Web.Controllers
 			get { return (RouteValueDictionary)Session[CurrentRouteDataKey]; }
 			set { Session[CurrentRouteDataKey] = value; }
 		}
-        
+
 		protected override void OnActionExecuting(ActionExecutingContext filterContext)
 		{
-            SetCurrentRoute(filterContext);
-            UpdateModelState(filterContext);
+			SetCurrentRoute(filterContext);
+			UpdateModelState(filterContext);
 			base.OnActionExecuting(filterContext);
 		}
-		
+
 		protected override void OnException(ExceptionContext filterContext)
 		{
 			if (filterContext.Exception != null)
@@ -103,52 +104,52 @@ namespace Client.Web.Controllers
 		}
 
 
-        #region [support]
+		#region [support]
 
-        public static string GetControllerName(Type controllerType, bool removeControllerPostfix)
-        {
-            if (removeControllerPostfix)
-            {
-                return controllerType.Name.Replace("Controller", String.Empty);
-            }
-            return controllerType.Name;
-        }
-        
-        protected virtual bool IsRequestOfType(HttpVerbs httpVerb)
-        {
-            return Request.RequestType == httpVerb.ToString().ToUpperInvariant();
-        }
+		public static string GetControllerName(Type controllerType, bool removeControllerPostfix)
+		{
+			if (removeControllerPostfix)
+			{
+				return controllerType.Name.Replace("Controller", String.Empty);
+			}
+			return controllerType.Name;
+		}
 
-        private void SetCurrentRoute(ActionExecutingContext filterContext)
-        {
-            if (PreviousRouteData == null ||
-                !Equals(CurrentRouteData.Count, filterContext.RouteData.Values.Count) ||
-                !filterContext.RouteData.Values.Values.All(s => CurrentRouteData.Values.Contains(s)))
-            {
-                PreviousRouteData = CurrentRouteData;
-                CurrentRouteData = filterContext.RouteData.Values;
-            }
-        }
+		protected virtual bool IsRequestOfType(HttpVerbs httpVerb)
+		{
+			return Request.RequestType == httpVerb.ToString().ToUpperInvariant();
+		}
 
-        private void UpdateModelState(ActionExecutingContext filterContext)
-        {
-            if (!filterContext.IsChildAction)
-            {
-                var state = TempData[ModelStateKey] as ModelStateDictionary;
-                if (state != null && !state.ContainsKey(ModelStateKey))
-                {
-                    state.Add(ModelStateKey, new ModelState());
-                    foreach (var item in state)
-                    {
-                        if (!ModelState.ContainsKey(item.Key))
-                        {
-                            ModelState.Add(item);
-                        }
-                    }
-                    TempData[ModelStateKey] = null;
-                }
-            }
-        }
+		private void SetCurrentRoute(ActionExecutingContext filterContext)
+		{
+			if (PreviousRouteData == null ||
+				!Equals(CurrentRouteData.Count, filterContext.RouteData.Values.Count) ||
+				!filterContext.RouteData.Values.Values.All(s => CurrentRouteData.Values.Contains(s)))
+			{
+				PreviousRouteData = CurrentRouteData;
+				CurrentRouteData = filterContext.RouteData.Values;
+			}
+		}
+
+		private void UpdateModelState(ActionExecutingContext filterContext)
+		{
+			if (!filterContext.IsChildAction)
+			{
+				var state = TempData[ModelStateKey] as ModelStateDictionary;
+				if (state != null && !state.ContainsKey(ModelStateKey))
+				{
+					state.Add(ModelStateKey, new ModelState());
+					foreach (var item in state)
+					{
+						if (!ModelState.ContainsKey(item.Key))
+						{
+							ModelState.Add(item);
+						}
+					}
+					TempData[ModelStateKey] = null;
+				}
+			}
+		}
 
 		protected virtual void MoveActionParametersTempData(IDictionary<string, object> actionParameters)
 		{
