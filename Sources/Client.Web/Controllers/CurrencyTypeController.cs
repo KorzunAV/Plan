@@ -6,8 +6,8 @@ using MvcJqGrid;
 
 namespace Client.Web.Controllers
 {
-	[Authorize(Roles = Constants.Roles.AdminPrincipal)]
-	[IsInRole(new[] { Constants.Roles.AdminPrincipal, Constants.Roles.SuPrincipal })]
+    //[Authorize(Roles = Constants.Roles.AdminPrincipal)]
+    //[IsInRole(new[] { Constants.Roles.AdminPrincipal, Constants.Roles.SuPrincipal })]
 	public class CurrencyTypeController : BaseController<CurrencyTypeController>
 	{
 		public const string ListAction = "List";
@@ -25,7 +25,7 @@ namespace Client.Web.Controllers
 
 		public ActionResult List(GridSettings gridSettings)
 		{
-			var items = Dao.SelectRange<CurrencyType>(new SelectCondition());
+			var items = Dao.SelectRange<CurrencyType>(new SelectCondition(gridSettings.PageSize,gridSettings.PageIndex));
 			var jsonData = Helpers.GridHelper.GetJsonData(items, gridSettings);
 			return Json(jsonData, JsonRequestBehavior.AllowGet);
 		}

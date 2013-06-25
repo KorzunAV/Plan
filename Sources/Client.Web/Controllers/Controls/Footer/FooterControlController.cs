@@ -29,12 +29,12 @@ namespace Client.Web.Controllers.Controls.Footer
 			model.IsMyAccountEnabled = true;
 
 			model.CurrencyTypeUrl = Url.Action(IndexAction, CurrencyTypeController.Name);
-			model.IsCurrencyTypeEnabled = UserPrincipal.IsAuthenticated
+            model.IsCurrencyTypeEnabled = true || UserPrincipal.IsAuthenticated
 				&& (UserPrincipal.CurrentUser.IsInRole(Constants.Roles.AdminPrincipal)
 					|| UserPrincipal.CurrentUser.IsInRole(Constants.Roles.SuPrincipal));
 
 			model.CashTransferUrl = Url.Action(IndexAction, MainGridController.Name);
-			model.IsCashTransferEnabled = UserPrincipal.IsAuthenticated;
+            model.IsCashTransferEnabled = true || UserPrincipal.IsAuthenticated;
 		}
 	}
 }

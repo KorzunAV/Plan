@@ -34,7 +34,6 @@ namespace Data.NHibernate
                     var conf = Fluently.Configure();
                     conf.Database(MsSqlConfiguration.MsSql2008.ConnectionString(_connectionString).ShowSql());
                     conf.Mappings(m => m.AutoMappings.Add(CreateAutomappings));
-                    conf.ExposeConfiguration(BuildSchema);
                     _sessionFactory = conf.BuildSessionFactory();
                 }
                 return _sessionFactory;

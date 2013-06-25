@@ -63,3 +63,28 @@ ul#menu-bar li.tender a:hover 	{ background: #535353; color: #FFF;} /* To target
 							.menu-bar-holder#reports .menubarCapend				{ background:url(../images/nav/reportsBackgroundCapEnd.jpg); }
 							.menu-bar-holder#tenders .menubarCapend				{ background:url(../images/nav/tendersBackgroundCapEnd.jpg); }
 							
+/* __________________________________________ Action Buttons __________________________________________ */
+ul#actionButtons				{ }
+ul#actionButtons.tabs			{ }
+ul#actionButtons.alt			{ }
+ul#actionButtons.left			{ }
+ul#actionButtons li				{ }
+ul#actionButtons li a			{ background: url(../images/actionButtons/actionButtonBack.png) no-repeat; text-shadow: 0px 1px 0px #fff; }
+ul#actionButtons li a span		{ background: url(../images/actionButtons/actionButtonCap.png); }
+ul#actionButtons.tabs li a span		{ background: url(../images/actionButtons/actionButtonCapAlt.png); }
+ul#actionButtons li a img		{ }
+ul#actionButtons li a img.basket	{ }
+
+ul#actionButtons li a:hover			{ color: #000; }
+ul#actionButtons li a:hover span	{ }
+
+ul#actionButtons li select			{ }
+ul#actionButtons li.inactive a		{ color: #999; }
+
+ul#actionButtons li.primary	a		{ background: url(../images/actionButtons/actionButtonBackPrimary.png) no-repeat; color: #FFF; text-shadow: 0px -1px 0px #38728f; }
+ul#actionButtons li.primary a span	{ background: url(../images/actionButtons/actionButtonCapPrimary.png);}
+ul#actionButtons.tabs li.primary a span	{ background:url(../images/actionButtons/actionButtonCapPrimaryWhite.png);}
+
+ul#actionButtons li.primary a:hover			{ color: #fff; }
+ul#actionButtons li.primary a:hover span	{ }
+

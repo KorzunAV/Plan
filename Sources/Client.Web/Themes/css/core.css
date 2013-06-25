@@ -81,3 +81,27 @@ ul#menu-bar li a			{
 							.menu-bar-holder#reports .menubarCapend				{ }
 							.menu-bar-holder#tenders .menubarCapend				{ }
 							
+/* __________________________________________ Action Buttons __________________________________________ */
+ul#actionButtons				{ float: right; overflow: hidden; }
+ul#actionButtons.tabs			{ }
+ul#actionButtons.alt			{ }
+ul#actionButtons.left			{ float: left; }
+ul#actionButtons li				{ float: left; }
+ul#actionButtons li a			{ position: relative; }
+ul#actionButtons li a span		{ position: absolute; }
+ul#actionButtons.tabs li a span		{ position: absolute; }
+ul#actionButtons li a img		{ position: absolute; }
+ul#actionButtons li a img.basket	{ }
+
+ul#actionButtons li a:hover			{ }
+ul#actionButtons li a:hover span	{ }
+
+ul#actionButtons li select			{ }
+ul#actionButtons li.inactive a		{ }
+
+ul#actionButtons li.primary	a		{ }
+ul#actionButtons li.primary a span	{ }
+
+ul#actionButtons li.primary a:hover			{ }
+ul#actionButtons li.primary a:hover span	{ }
+

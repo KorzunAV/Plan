@@ -28,7 +28,7 @@
 
 .left-columnAlt.stores	{ margin-top: 128px; }
 
-/* __________________________________________ Main navigation __________________________________________*/
+/* c Main navigation __________________________________________*/
 .menu-bar-holder			{ clear: both; display: block; position: relative; width: 100%;  }
 ul#menu-bar					{ display: block; margin: 0 20px 0 0; padding: 8px 0 11px 15px; overflow: hidden; height: 30px;  }
 							/* Main module classes */
@@ -64,4 +64,29 @@ ul#menu-bar li a			{ padding: 7px 10px 10px 10px; height: 12px; margin: 0 4px; d
 							.menu-bar-holder#supplier .menubarCapend			{ }
 							.menu-bar-holder#reports .menubarCapend				{ }
 							.menu-bar-holder#tenders .menubarCapend				{ }
-		
+							
+/* __________________________________________ Action Buttons __________________________________________ */
+ul#actionButtons				{ padding: 7px 0 0 0; margin: 0 20px 8px 0; }
+ul#actionButtons.tabs			{ padding-top: 15px; padding-bottom: 10px; }
+ul#actionButtons.alt			{ padding-top: 0; padding-bottom: 10px;}
+ul#actionButtons.alt.no-margin	{ margin-bottom: 0; padding: 0 0 5px 0; }
+ul#actionButtons.left			{ margin-left: 20px;  padding: 7px 0 10px 0; }
+ul#actionButtons li				{ margin: 8px 5px 8px 0; }
+ul#actionButtons li a			{ padding: 6px 15px 6px 30px; }
+ul#actionButtons li a span		{ width: 12px; height: 28px; right: 0; top: 0;}
+ul#actionButtons.tabs li a span		{ width: 12px; height: 28px; right: 0; top: 0;}
+ul#actionButtons li a img		{ margin: 0; padding: 0; top: 6px; left: 8px; }
+ul#actionButtons li a img.basket	{ top: 4px; left: 6px; }
+
+ul#actionButtons li a:hover			{ background-position: 0 -32px;  }
+ul#actionButtons li a:hover span	{ background-position: 0 -32px; }
+
+ul#actionButtons li select			{ margin: 0 5px 0 0; }
+ul#actionButtons li.inactive a		{ }
+
+ul#actionButtons li.primary	a		{ }
+ul#actionButtons li.primary a span	{ }
+
+ul#actionButtons li.primary a:hover			{ background-position: 0 -32px; }
+ul#actionButtons li.primary a:hover span	{ background-position: 0 -32px; }
+

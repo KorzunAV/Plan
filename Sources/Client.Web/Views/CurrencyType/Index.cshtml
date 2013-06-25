@@ -5,16 +5,16 @@
 @{
 	Layout = "~/Views/Shared/MasterPages/_TwoColumnsLayout.cshtml";
 }
+
 <div class="right-columnAlt">
 	@(Html.Grid("Basic")
 	.SetCaption(Views.CurrencyType)
-	.AddColumn(new Column("Name").SetLabel(Views.CurrencyType))
-	.SetUrl(Url.Action(MainGridController.ListAction, MainGridController.Name))
+	.AddColumn(new Column("Name").SetLabel(Views.TransferType_Name))
+	.AddColumn(new Column("ShortName").SetLabel(Views.TransferType_ShortName))
+	.SetUrl(Url.Action(CurrencyTypeController.ListAction, CurrencyTypeController.Name))
 	.SetAutoWidth(true)
 	.SetRowNum(10)
 	.SetRowList(new[] { 10, 15, 20, 50 })
 	.SetViewRecords(true)
-	.SetMultiSelect(true)
-	.SetMultiSelectWidth(20)
 	.SetPager("pager"))
 </div>

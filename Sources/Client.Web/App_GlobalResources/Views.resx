@@ -153,4 +153,10 @@
   <data name="TransferType" xml:space="preserve">
     <value>Тип перевода</value>
   </data>
+  <data name="TransferType_Name" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="TransferType_ShortName" xml:space="preserve">
+    <value>Обозначение</value>
+  </data>
 </root>
