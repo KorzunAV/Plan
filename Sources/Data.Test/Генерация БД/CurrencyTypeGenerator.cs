@@ -6,10 +6,9 @@ using NUnit.Framework;
 
 namespace Data.Test.Генерация_БД
 {
-    [TestFixture]
     public class CurrencyTypeGenerator
     {
-        private const string PathToDocuments = @"Documents\";
+        private const string PathToDocuments = @"Documents\Курсы валют\";
         private const string PathToCurrencyTypeSql = @"Scripts\Наполнение БД\CurrencyType.sql";
         private const string LineKey = "Дата";
         public const string Byr = "Белорусский рубль (BYR)";

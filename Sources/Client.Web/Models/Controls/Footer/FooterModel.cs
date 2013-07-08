@@ -21,11 +21,11 @@
 
 		#endregion
 
-		
-		#region CashTransfer
 
-		public bool IsCashTransferEnabled { get; set; }
-		public string CashTransferUrl { get; set; }
+        #region Transaction
+
+        public bool IsTransactionEnabled { get; set; }
+        public string TransactionUrl { get; set; }
 
 		#endregion
 	}

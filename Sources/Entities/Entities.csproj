@@ -60,7 +60,7 @@
     <Compile Include="UserRole.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CashTransfer.cs">
+    <Compile Include="Transaction.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

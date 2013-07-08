@@ -1,8 +1,12 @@
-﻿namespace Common.Data.Core
+﻿using Common.Data.Core.Conditions;
+
+namespace Common.Data.Core
 {
 	public interface IBaseDao
 	{
         PagedResult<T> SelectRange<T>(SelectCondition condition) where T : IEntityBase;
+
+        bool IsExist<T>(SelectCondition condition);
         
 		T Select<T>(int id) where T : class, IEntityBase;
 		

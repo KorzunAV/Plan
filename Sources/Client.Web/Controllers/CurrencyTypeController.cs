@@ -1,5 +1,4 @@
 ﻿using System.Web.Mvc;
-using Client.Web.Attributes;
 using Common.Data.Core;
 using Entities;
 using MvcJqGrid;
@@ -25,8 +24,9 @@ namespace Client.Web.Controllers
 
 		public ActionResult List(GridSettings gridSettings)
 		{
-			var items = Dao.SelectRange<CurrencyType>(new SelectCondition(gridSettings.PageSize,gridSettings.PageIndex));
-			var jsonData = Helpers.GridHelper.GetJsonData(items, gridSettings);
+            var condition = Helpers.GridHelper.ToSelectCondition(gridSettings);
+            var items = Dao.SelectRange<CurrencyType>(condition);
+            var jsonData = Helpers.GridHelper.GetJsonData(items, condition);
 			return Json(jsonData, JsonRequestBehavior.AllowGet);
 		}
 	}

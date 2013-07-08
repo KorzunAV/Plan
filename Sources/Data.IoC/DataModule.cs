@@ -1,4 +1,5 @@
 ﻿using Common.Data.Core;
+using Common.Data.Core.Conditions;
 using Data.NHibernate;
 using Ninject.Modules;
 using System.Configuration;

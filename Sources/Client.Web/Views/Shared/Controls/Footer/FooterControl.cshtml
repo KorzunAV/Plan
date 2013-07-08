@@ -26,11 +26,11 @@
 					</h3>
 				</li>
 			}
-			@if(Model.IsCashTransferEnabled)
+			@if(Model.IsTransactionEnabled)
 			{
 				<li>
 					<h3>
-						<a href="@Model.CashTransferUrl">@Views.CashTransfer</a>
+						<a href="@Model.TransactionUrl">@Views.Transaction</a>
 					</h3>
 				</li>
 			}

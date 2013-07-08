@@ -52,10 +52,12 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AutoCreateDbTest.cs" />
+    <Compile Include="Генерация БД\ConvertHelper.cs" />
     <Compile Include="Генерация БД\CurrencyTypeGenerator.cs" />
     <Compile Include="Генерация БД\ExchangeArchiveGenerator.cs" />
-    <Compile Include="Генерация БД\GenerateScripts.cs" />
+    <Compile Include="Генерация БД\FileHelper.cs" />
     <Compile Include="Генерация БД\GeneratorHelper.cs" />
+    <Compile Include="Генерация БД\MyDateSetter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

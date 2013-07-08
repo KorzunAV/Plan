@@ -10,18 +10,22 @@ namespace Data.NHibernate
     /// </summary>
     class CascadeConvention : IReferenceConvention, IHasManyConvention, IHasManyToManyConvention
     {
+        //TODO:KOA: надо будет настроить LazyLoad
         public void Apply(IManyToOneInstance instance)
         {
+            instance.Not.LazyLoad();
             instance.Cascade.All();
         }
 
         public void Apply(IOneToManyCollectionInstance instance)
         {
+            instance.Not.LazyLoad();
             instance.Cascade.All();
         }
 
         public void Apply(IManyToManyCollectionInstance instance)
         {
+            instance.Not.LazyLoad();
             instance.Cascade.All();
         }
     }

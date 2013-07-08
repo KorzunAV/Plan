@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Data.Test.Генерация_БД
 {
@@ -68,7 +69,11 @@ namespace Data.Test.Генерация_БД
 
         public static string RemoveDigits(string str)
         {
-            var res = str.Remove(0, str.IndexOf(' '));
+            var res = str.Trim();
+            if (Regex.Match(str, "[0-9]").Success)
+            {
+                res = str.Remove(0, str.IndexOf(' '));
+            }
             res = res.Trim();
             res = res.Substring(0, 1).ToUpper() + (res.Length > 1 ? res.Substring(1) : "");
             return res;

@@ -33,8 +33,8 @@ namespace Client.Web.Controllers.Controls.Footer
 				&& (UserPrincipal.CurrentUser.IsInRole(Constants.Roles.AdminPrincipal)
 					|| UserPrincipal.CurrentUser.IsInRole(Constants.Roles.SuPrincipal));
 
-			model.CashTransferUrl = Url.Action(IndexAction, MainGridController.Name);
-            model.IsCashTransferEnabled = true || UserPrincipal.IsAuthenticated;
+            model.TransactionUrl = Url.Action(IndexAction, MainGridController.Name);
+            model.IsTransactionEnabled = true || UserPrincipal.IsAuthenticated;
 		}
 	}
 }

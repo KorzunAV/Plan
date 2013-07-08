@@ -1,4 +1,5 @@
-﻿<div class="content-wrapper">
+﻿@using Client.Web.App_GlobalResources
+<div class="content-wrapper">
   <div class="float-left">
     <p class="site-title">MVC jqGrid</p>
   </div>
@@ -7,9 +8,9 @@
       &nbsp;
     </section>
     <nav>
-      <ul id="menu">
-        <li>@Html.ActionLink("MainGridControl", "Index", "MainGrid")</li>
-      </ul>
+        <ul id="menu">
+            <li>@Html.ActionLink(@Views.Transaction, "Index", "MainGrid")</li>
+        </ul>
     </nav>
   </div>
 </div>

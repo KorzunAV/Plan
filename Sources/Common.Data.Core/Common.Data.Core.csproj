@@ -41,14 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassNameHelper.cs" />
-    <Compile Include="Filter.cs" />
+    <Compile Include="Conditions\Filter.cs" />
     <Compile Include="IBaseDao.cs" />
-    <Compile Include="IConditionResolver.cs" />
+    <Compile Include="Conditions\IConditionResolver.cs" />
     <Compile Include="IEntityBase.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="PagedResult.cs" />
-    <Compile Include="Rule.cs" />
-    <Compile Include="SelectCondition.cs" />
+    <Compile Include="Conditions\Rule.cs" />
+    <Compile Include="Conditions\SelectCondition.cs" />
     <Compile Include="Paging.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

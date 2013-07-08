@@ -27,7 +27,7 @@ namespace Client.Web.Controllers
 		protected override void HandleUnknownAction(string actionName)
 		{
 			base.HandleUnknownAction(actionName);
-			this.View(actionName).ExecuteResult(this.ControllerContext);
+			View(actionName).ExecuteResult(ControllerContext);
 		}
 	}
 

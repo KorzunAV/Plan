@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Common.Data.Core
+namespace Common.Data.Core.Conditions
 {
     public class Filter
     {
@@ -10,6 +10,6 @@ namespace Common.Data.Core
         }
 
         public string GroupOp { get; set; }
-        public IEnumerable<Rule> Rules { get; set; }
+        public List<Rule> Rules { get; set; }
     }
 }

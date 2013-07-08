@@ -61,15 +61,6 @@ namespace Client.Web.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Денежный перевод.
-        /// </summary>
-        public static string CashTransfer {
-            get {
-                return ResourceManager.GetString("CashTransfer", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Комментарий.
         /// </summary>
         public static string Comment {
@@ -84,15 +75,6 @@ namespace Client.Web.App_GlobalResources {
         public static string CurrencyType {
             get {
                 return ResourceManager.GetString("CurrencyType", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Дата создания.
-        /// </summary>
-        public static string DareCreation {
-            get {
-                return ResourceManager.GetString("DareCreation", resourceCulture);
             }
         }
         
@@ -142,11 +124,56 @@ namespace Client.Web.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Денежный перевод.
+        /// </summary>
+        public static string Transaction {
+            get {
+                return ResourceManager.GetString("Transaction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Дата регистрации.
+        /// </summary>
+        public static string Transaction_RegistrationDate {
+            get {
+                return ResourceManager.GetString("Transaction_RegistrationDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Код транзакции.
+        /// </summary>
+        public static string Transaction_TransactionCode {
+            get {
+                return ResourceManager.GetString("Transaction_TransactionCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Дата транзакции.
+        /// </summary>
+        public static string Transaction_TransactionDate {
+            get {
+                return ResourceManager.GetString("Transaction_TransactionDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Номер транзакции / Документа.
+        /// </summary>
+        public static string Transaction_TransactionNumber {
+            get {
+                return ResourceManager.GetString("Transaction_TransactionNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Размер перевода.
         /// </summary>
-        public static string TransferCount {
+        public static string Transaction_Value {
             get {
-                return ResourceManager.GetString("TransferCount", resourceCulture);
+                return ResourceManager.GetString("Transaction_Value", resourceCulture);
             }
         }
         
